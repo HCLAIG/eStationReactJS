@@ -1,0 +1,218 @@
+.App {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: white;
+  height: 150px;
+  padding: 20px;
+  color: black;
+   }
+
+.App-intro {
+  font-size: large;
+}
+.Bluetext{
+  font-weight: bold;
+font-size: 8pt;
+color: #1e398d;
+font-family: Veranda, Geneva;
+background-color: #e0e4ed;
+text-align: left;
+vertical-align: middle;
+  }
+  .Alignleft
+  {
+    text-align: left;
+    vertical-align: middle;
+  }
+  .Backgroundwhite{
+    background-color: white;
+  }
+  .Borderstyle
+  {
+    border-width: 0;
+    border-color: black;
+  }
+  .Policydetailheader{
+  font-weight: bold;
+font-size: 7pt;
+color: #1E398D;
+font-family: Veranda, Geneva;
+background-color: #ffffff;
+text-align: left;
+letter-spacing: 1.5;
+vertical-align: middle;
+  }
+  .Gentextbold{
+    font-weight: bold;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+height: 20px; 
+  }
+.Gentextboldgrey{
+    font-weight: bold;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #1E398D;
+text-align: left;
+vertical-align: middle;
+background-color: #e0e4ed;
+height: 20px; 
+  }
+.Gentextbluegrey{
+    font-weight: bold;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+background-color: #e0e4ed;
+  }
+.Greytext{
+  font-weight: normal;
+font-size: 11px;
+color: #1e398d;
+font-family: Verdana,Arial,Helvetica,sans-serif;
+background-color: #e5e5e5;
+text-align: left;
+vertical-align: middle;
+padding-right: 3px;
+padding-left: 3px;
+
+  }
+.Hr {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.1px;
+    /*border: 1px black;*/
+    border-color: black;
+    
+    }
+    .Vr {
+    width:0.1px;
+    background-color:#000;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:5px;
+}
+.Hrgrey {
+    display: block;
+    
+    margin-bottom: 0.3em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.1px;
+    
+    
+    }
+    .Tdcontainer { 
+      height: 20px; 
+      text-align: left;
+      vertical-align: middle;      
+      }
+      .Orderstatusheader{
+  font-weight: bold;
+font-size: 7pt;
+color: #1E398D;
+font-family: Veranda, Geneva;
+background-color:Silver;
+text-align: left;
+letter-spacing: 1.5;
+ height: 20px; 
+            vertical-align: middle;  
+  }
+
+  .Gentextitalic{
+    font-weight: bold;
+    font-style: italic;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+height: 20px; 
+  }
+.Gentextitalicgrey{
+    font-weight: bold;
+    font-style: italic;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+background-color: #e0e4ed;
+  }
+
+  .Gentextblue{
+    font-weight: bold;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: #1E398D;
+text-align: left;
+vertical-align: middle;
+  }
+  .Gentextboldgreyblack{
+    font-weight: bold;
+font-size: 7pt;
+font-family: Arial, Veranda, Geneva;
+color: black;
+text-align: left;
+vertical-align: middle;
+background-color: #e0e4ed;
+  }
+.Whitetext{
+    font-weight:normal;
+font-size: 8pt;
+font-family:verdana,geneva;
+color: #ffffff;
+text-align: left;
+vertical-align: middle;
+background-color: #6e7e97;
+  }
+.Whitetextbold{
+    font-weight:bold;
+font-size: 8pt;
+font-family:verdana,geneva;
+color: #ffffff;
+text-align: left;
+vertical-align: middle;
+background-color: #6e7e97;
+  }
+.Blacktext{
+    font-weight:normal;
+font-size: 8pt;
+font-family:verdana,geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+background-color:#a7b6cb;
+  }
+.Blacktextbold{
+    font-weight:bold;
+font-size: 8pt;
+font-family:verdana,geneva;
+color: #000000;
+text-align: left;
+vertical-align: middle;
+background-color:#a7b6cb;
+  }
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

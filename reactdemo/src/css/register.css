@@ -1,0 +1,143 @@
+
+.mainRegisterDiv{
+	width:100%;
+	padding: 0px;
+	border-spacing: 0px;
+	border: 0px;
+}
+
+.pageTopArea{
+    height:134px;
+	/*background:#fff url(./images/pageTopAreaBG.jpg) top left repeat-x; /* logo image is gif with this color as background, not transparent - so logo background and this background are not distinguishable */
+    background:#fff url("../images/pageTopAreaBG.jpg") top left repeat-x;
+	position:relative;
+	margin:0 0 1px 0;
+	 /* don't use this if also using position:relative */
+	padding:0px 0px 0px 0px;
+	/* position:relative; used if absolute positioning is used, dont' use with overflow - currently not used for this css */
+}
+
+.topArea{float:left; height:79px;}
+
+.logoControlContainer{
+	float:left;
+	height:30px; /* of logo image */
+	margin:40px 0 0px 10px;;  /* in addition to logo */
+	padding:20px 0 0 109px;
+    background:#fff url("../images/AIG_Logo.png") top left repeat-x;
+}
+fieldSet.fieldSet{margin:0px 500px 20px 40px; text-align:left; padding:20px 20px 20px 20px; border:solid 1px #1E90FF; font-size:12px; color:#000000;}
+fieldSet.fieldSetMedium{margin:0px 20px 20px 40px; text-align:left; padding:20px 20px 20px 20px; border:solid 1px #1E90FF; font-size:12px; color:#000000;width:75%;}
+fieldSet.fieldSetSmall{margin:0px 20px 20px 40px; text-align:left; padding:20px 20px 20px 20px; border:solid 1px #1E90FF; font-size:12px; color:#000000;width:50%;}
+div.oneColumn {float:left; overflow:hidden; padding:0 0 5px 0; width:100%; text-align:left;}
+div.twoColumn {float:left; overflow:hidden; padding:0 0 5px 0; width:100%; text-align:right;}
+div.twoColumn div.firstColumn {float:left; overflow:hidden; padding:0; width: 20%; text-align:right;}
+div.twoColumn div.secondColumn{float:left; overflow:hidden; padding:0; width:75%; text-align:left; margin:0px 0px 0px 10px;}
+div.title{font-size:18px; font-weight:bold; padding:0px 0px 5px 0px; color: #1E90FF}
+div.buttons{float:left; margin-top:20px; border-top:solid 1px #e5e5e5; overflow:hidden; padding:5px; text-align:right; width:100%;}
+div.information{float: left; overflow: hidden; padding: 0px 0px 15px 0px; text-align: left; font-size:12px; color: Gray;}
+div.errorMessage{float: left; overflow: hidden; padding: 0px 0px 15px 0px; text-align: left; font-size:12px; color: Red;}
+input.txtBox{width:250px; height:15px; font-size:12px;}
+.dropdown{width:253px; height:23px; font-size:12px;}
+
+div.oneColumn2 {
+    float:left; 
+    overflow:hidden; 
+    padding:0 0 5px 0; 
+    width:100%; 
+    text-align:left;
+    margin-bottom:0px;
+
+}
+div.spanStyle{
+    font-size: 10px;
+}
+.warning 
+{
+	color: #d45222;
+}
+
+.secondColumn2{
+    float:left; 
+    overflow:hidden; 
+    padding:0; 
+    width:115%; 
+    text-align:left; 
+    margin:0px 0px 0px 10px;
+    margin-left: 165px;
+    font-size: 10px;
+}
+
+.emptyDiv{
+    float: left;
+    overflow: hidden;
+    text-align: left;
+    margin: 0px 0px 0px 5px;
+}
+.countryDropdown{
+    float: left;
+    overflow: hidden;
+    width: 15%;
+    text-align: left;
+}
+.phoneNumberTextBox{
+    float: left;
+    overflow: hidden;
+    width: 20%;
+    text-align: left;
+    margin: 0px 0px 0px 10px;
+    padding-right: 10px;
+    height: 13px;
+    
+}
+.lblCountryCode{
+    float: left;
+    overflow: hidden;
+    width: 15%;
+    text-align: left;
+    padding-top: 10px;
+}
+
+
+select.countryCode option{font-size:10px;}
+
+.checkboxDiv{
+    float: left;
+    overflow: hidden;
+    width: 58%;
+    text-align: left;
+    font-size: 11px;
+}
+.checkboxSpanText{
+    text-align: left;
+    font-size: 11px;
+}
+.smallInfoText{
+    font-size: 10px;
+}
+.SecurityQstnDropDown{
+    width: 253px;
+    height: 23px;
+    font-size: 12px;
+}
+.emptyText{
+    padding-bottom: 10px;
+}
+.note{
+    color:#1E90FF;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+.regButton{
+    background-color: #1E90FF;
+    border: none;
+    color: #F8F8FF;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+

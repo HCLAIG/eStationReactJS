@@ -1,0 +1,340 @@
+.login {
+
+    color : #003366;
+    font-family : Verdana, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size : 11px;
+    text-decoration : none;
+
+}
+
+a.login:link {
+
+    text-decoration : none;
+
+}
+a.login:visited {
+
+    text-decoration : none;
+
+}
+a.login:hover {
+
+    text-decoration : underline;
+}
+
+.tdhomeintro {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #00204F;
+	text-decoration: none;
+}
+
+.tdloginintro {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.tdmiddle {
+	vertical-align:middle;
+}
+
+p {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+.userMessage {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	color:Red;
+	text-decoration: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+h1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 18px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #00204F;
+	text-decoration: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: -10px;
+	padding-left: 0px;
+}
+
+h1.registration {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 22px;
+	font-style: normal;
+	line-height: 22px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #00204F;
+	text-decoration: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: -10px;
+	padding-left: 0px;
+}
+
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	line-height: 12px;
+	font-weight: normal;
+	color: #ADB1B3;
+	text-decoration: none;
+	text-align: center;
+
+}
+
+.normal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: normal;
+	color: black;
+	text-decoration: none;
+	
+
+}
+a.bottomlink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #336699;
+	text-decoration: none;
+	vertical-align:middle;
+	padding: 3px 3px 3px 3px;
+}
+a.bottomlink:visited {
+ font-weight: normal; 
+ color: #999999; 
+ text-decoration: none;
+	vertical-align:middle;
+	padding: 3px 3px 3px 3px;
+ }
+a.bottomlink:hover {
+ font-weight: normal; 
+ color: #CC9900; 
+ text-decoration: none;
+	vertical-align:middle;
+	padding: 3px 3px 3px 3px;
+ }
+a.bottomlink:active {
+ font-weight: normal; 
+ color: CC9900; 
+ text-decoration: none;
+	vertical-align:middle;
+	padding: 3px 3px 3px 3px;
+ }
+
+a.navL1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+ height: 15px; 
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #E2E2E1;
+	text-decoration: none;
+}
+a.navL1:visited {
+ font-weight: bold; 
+ height: 15px; 
+ color: #E2E2E1; 
+ text-decoration: none;
+ }
+a.navL1:hover {
+ font-weight: bold;
+ height: 15px; 
+ color: #E2E2E1; 
+ text-decoration: none;
+ }
+a.navL1:active {
+ font-weight: bold; 
+ height: 15px; 
+ color: #FFFFFF; 
+ text-decoration: none;
+ }
+
+a.RegisterLink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #0000ff;
+}
+a.RegisterLink:visited {
+ font-weight: bold; 
+ color: #800080; 
+ }
+a.RegisterLink:hover {
+ font-weight: bold;
+ BACKGROUND-COLOR: #FFCC33;
+ }
+a.RegisterLink:active {
+ font-weight: bold; 
+ color: #0000ff; 
+ }
+
+a.navL1sel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+ height: 15px; 
+	font-variant: normal;
+	color: #E2E2E1;
+	text-decoration: none;
+}
+a.navL1sel:visited {
+ font-weight: bold; 
+ height: 15px; 
+ color: #FFFFFF; 
+ text-decoration: none;
+ }
+a.navL1sel:hover {
+ font-weight: bold; 
+ height: 15px; 
+ color: #E2E2E1; 
+ text-decoration: none;
+ }
+a.navL1sel:active {
+ font-weight: bold; 
+ height: 15px; 
+ color: #FFFFFF; 
+ text-decoration: none;
+ }
+
+
+a.navL2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+ height: 15px; 
+	font-weight: bold;
+	font-variant: normal;
+	color: #E2E2E1;
+	text-decoration: none;
+}
+a.navL2:visited {
+ font-weight: bold; 
+ color: #E2E2E1; 
+ height: 15px; 
+ text-decoration: none;
+ }
+a.navL2:hover {
+ font-weight: bold; 
+ color: #E2E2E1; 
+ text-decoration: none;
+ height: 15px; 
+ }
+a.navL2:active {
+ font-weight: bold; 
+ color: #FFFFFF; 
+ text-decoration: none;
+ height: 15px; 
+ }
+
+
+a.navL2sel {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+ height: 15px; 
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #E2E2E1;
+	text-decoration: none;
+}
+a.navL2sel:visited {
+ font-weight: bold; 
+ color: #FFFFFF; 
+ height: 15px; 
+ text-decoration: none;
+ }
+a.navL2sel:hover {
+ font-weight: bold; 
+ color: #E2E2E1; 
+ height: 15px; 
+ text-decoration: none;
+ }
+a.navL2sel:active {
+ font-weight: bold; 
+ height: 15px; 
+ color: #FFFFFF; 
+ text-decoration: none;
+ }
+
+.userMessageBlack {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	color:Black;
+	text-decoration: none;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+.error
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	height: 15px; 
+	font-weight: bold;
+	font-variant: normal;
+	color: red;
+}
+
+.ValidationSummaryError
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;	
+	font-weight: bold;
+	font-variant: normal;
+	color: red;
+}

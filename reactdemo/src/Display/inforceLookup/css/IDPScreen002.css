@@ -1,0 +1,991 @@
+body {
+	color: #003366;
+	background-color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+}
+
+.TextNormal {
+	font-weight: normal;
+}
+
+.TextBold {
+	font-weight: bold;
+}
+
+.TextLink {
+	color: #003366;
+	font-weight: normal;
+}
+
+.LeftJustify {
+	text-align: left;
+}
+
+.RightJustify {
+	text-align: right;
+}
+
+.TextHeader {
+	color: #003366;
+	font-weight: bold;
+	border: 1px solid #003366;
+	Background-Color: #eeeeee;
+	margin: 0em 2em;
+}
+
+.Section {
+	width: 100%;
+	padding: 0px;
+	margin: 0px 0px 4px 0px;
+	clear: both;
+	display: block;
+	font: normal 10pt Arial, geneva, helvetica;
+}
+
+.ContentBox {
+	width: 80%;
+	height: 100%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px 10px;
+}
+
+.Size100 {
+	width: 100%;
+	vertical-align: top;
+	padding: 0px;
+	clear: both;
+	display: block;
+}
+
+.Size80 {
+	width: 80%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size75 {
+	width: 74%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size66 {
+	width: 65%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size50 {
+	width: 49%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size33 {
+	width: 32%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size25 {
+	width: 24%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Size20 {
+	width: 20%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Gutter {
+	width: 2%;
+	vertical-align: top;
+	margin: 0px;
+	padding: 0px;
+}
+
+.Column {
+	vertical-align: top;
+}
+
+
+/* */
+.BacktrackBox {
+	margin-top: 4px;
+	margin-bottom: 3px;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-bottom: 1px solid #003366;
+	font: normal 9pt Arial, geneva, helvetica;
+	padding-bottom: 3px;
+	display: block;
+}
+
+.BacktrackItemFrom {
+	font-weight: bold;
+	font-size : 9pt;
+	float: left;
+}
+
+.BacktrackItemCurrent {
+	font-weight: bold;
+	font-size : 9pt;
+}
+
+.BacktrackItemTo {
+	font-weight: bold;
+	font-size : 9pt;
+	float: right;
+}
+
+.BacktrackItemText {
+	font-size : 9pt;
+	font-weight : normal;
+}
+
+.HeaderBox {
+	width: 100%;
+	background-color: #003366;
+	height: 41px;
+}
+
+.MenuBox {
+	width: 100%;
+	background-color: #ffffff;
+	height: 22px;
+}
+
+.HeaderBoxLogo {
+	
+}
+
+.HeaderBoxTitle {
+	height: 41px;
+	text-align: right;
+	padding-right: 1em;
+}
+
+.HeaderBoxTextTitle {
+	color: #ffffff;
+	font: normal 14pt Arial, geneva, helvetica;
+}
+
+.MenuBoxName {
+	background: #003366;
+	text-align: center;
+	width: 100%;
+}
+
+.MenuBoxFiller {
+	background: #ffffff;
+}
+
+.MenuBoxItemSelected {
+	background: #ff9900;
+	border-left: 3px solid #ffffff;
+	text-align: center;
+}
+
+.MenuBoxItemUnselected {
+	background: #336699;
+	border-left: 3px solid #ffffff;
+	text-align: center;
+}
+
+.MenuBoxItemUnselectedSized {
+	background: #336699;
+	border-left: 3px solid #ffffff;
+	text-align: center;
+	width: 8em;
+}
+
+.MenuBoxTextSelected {
+	color: #ffffff;
+	font: bold 9pt Verdana, Arial, geneva, helvetica;
+	Text-Decoration: none;
+}
+
+a.MenuBoxTextSelected:hover {
+	color: #ff6600;
+	font-size: 10pt;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.MenuBoxTextUnselected {
+	color: #ffffff;
+	font: bold 9pt Verdana, Arial, geneva, helvetica;
+	Text-Decoration: none;
+	height: 22px;
+}
+
+.MessageFatal {
+	border: 3px solid #990000;
+	color: #660000;
+	padding: 2px 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.MessageError {
+	border: 2px solid #990000;
+	color: #660000;
+	padding: 2px 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.MessageWarn {
+	border: 2px solid #f0f000;
+	color: #000000;
+	display: block;
+	padding: 2px 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.MessageInfo {
+	border: 2px solid #003366;
+	color: #003366;
+	display: block;
+	padding: 2px 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.MessageText_Fatal {
+	color: #660000;
+}
+
+.MessageText_Error {
+	color: #660000;
+}
+
+.MessageText_Warning {
+	color: #000000;
+}
+
+.MessageText_Information {
+	color: #003366;
+}
+
+.MessageFatalField {
+	color: #660000;
+	margin-left: 1em;
+}
+
+.MessageErrorField {
+	color: #660000;
+	margin-left: 1em;
+}
+
+.MessageWarnField {
+	color: #000000;
+	margin-left: 1em;
+}
+
+.MessageInfoField {
+	color: #003366;
+	margin-left: 1em;
+}
+
+.HomepageBox {
+	border: 2px solid #003366;
+	background: #f8f8f8;
+	margin-bottom: 3px;
+	font: normal 10pt Arial, geneva, helvetica;
+	display: block;
+	vertical-align: top;
+}
+
+.HomepageBoxHeader {
+	display: block;
+	color: #ffffff;
+	background: #003366;
+	text-align: left;
+	padding: 3px 5px;
+	font: bold 8pt Verdana, geneva, helvetica;
+}
+
+.HomepageBoxSubheader {
+	clear: both;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	color: #003366;
+	padding: 2px 5px;
+	text-align: left;
+	font: bold 8pt Arial, geneva, helvetica;
+}
+
+.HomepageBoxInstruction {
+	clear: both;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	color: #003366;
+	padding: 2px 5px;
+	text-align: left;
+	font: normal 8pt Arial, geneva, helvetica;
+}
+
+.HomepageBoxNote {
+	clear: both;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 2px;
+	color: #003366;
+	padding: 2px 5px;
+	text-align: left;
+	font: normal 8pt Arial, geneva, helvetica;
+}
+
+.HomepageBoxFooter {
+	clear: both;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+}
+
+.HomepageBoxItem {
+	clear: both;
+	display: block;
+	padding: 2px 5px;
+	font-size: 8pt;
+}
+
+.HomepageFormLabel {
+	font-weight: bold;
+	text-align: left;
+	display: block;
+}
+
+.HomepageFormField {
+	font-weight: normal;
+	text-align: left;
+	display: block;
+}
+
+.HomepageFormButton {
+	color: #ffffff;
+	border: 2px solid #336699;
+	background: #336699;
+	font-weight: bold;
+	text-align: center;
+}
+
+.HomepageBoxButtons {
+	clear: both;
+	display: block;
+	padding: 2px 5px;
+	font-size: 8pt;
+	text-align: center;
+}
+
+.LoginFormLabel {
+	color: #003366;
+	font-weight: bold;
+	text-align: left;
+	display: block;
+}
+
+.LoginFormField {
+	color: #003366;
+	font-weight: normal;
+	display: block;
+	float: right;
+}
+
+.LoginFormButton {
+	color: #003366;
+	font-weight: normal;
+	text-align: center;
+	font: normal 8pt Arial, geneva, helvetica;
+}
+
+.PrimaryBox {
+   border : 2px solid #003366;
+   background : #f8f8f8;
+   margin-bottom : 5px;
+   font : normal 10pt Arial,geneva,helvetica;
+   display : block;
+   vertical-align : top;
+}
+
+.PrimaryBoxHeader {
+   display : block;
+   color : #ffffff;
+   background : #336699;
+   text-align : center;
+   padding : 0px 0px 1px 0px;
+   font : bold 10pt Verdana,geneva,helvetica;
+}
+
+.PrimaryBoxSubheader {
+   clear : both;
+   display : block;
+   margin-top : 10px;
+   margin-bottom : 2px;
+   color : #003366;
+   padding : 0px 0px 2px 10px;
+   text-align : left;
+   font : bold 10pt Verdana,geneva,helvetica;
+}
+
+.PrimaryBoxInstruction {
+   clear : both;
+   display : block;
+   margin-top : 10px;
+   margin-bottom : 2px;
+   color : #003366;
+   padding : 0px 0px 2px 10px;
+   text-align : left;
+   font : bold 9pt Arial,geneva,helvetica;
+}
+
+.PrimaryBoxNote {
+   clear : both;
+   display : block;
+   margin-top : 10px;
+   margin-bottom : 2px;
+   color : #003366;
+   padding : 0px 0px 2px 10px;
+   text-align : left;
+   font : normal 8pt Arial,geneva,helvetica;
+}
+
+.PrimaryBoxFooter {
+   font-weight : bold;
+   text-align : center;
+}
+
+.PrimaryBoxItem {
+   clear : both;
+   display : block;
+	padding : 5px 10px 5px 10px;
+   font-size : 9pt;
+}
+
+.PrimaryBoxButtons {
+   clear : both;
+   display : block;
+	padding : 5px 10px 5px 10px;
+   font-size : 9pt;
+   text-align : center;
+}
+
+.PrimaryTextHeader {
+   color : #ffffff;
+   padding : 0px 0px 2px 0px;
+   font-weight : bold;
+   text-align : center;
+}
+
+.PrimaryTextFooter {
+   font-weight : bold;
+   text-align : center;
+}
+
+.PrimaryBoxFormLabel {
+   font-weight : bold;
+   text-align : left;
+   display : block;
+   float : left;
+   font : normal 9pt Arial,geneva,helvetica;
+   width : 10em;
+}
+
+.PrimaryBoxFormField {
+   font-weight : normal;
+   text-align : left;
+   display : block;
+   float : left;
+}
+
+.PrimaryFormButton {
+   color : #ffffff;
+   background : #336699;
+   font-weight : bold;
+   text-align : center;
+   margin : 0px 3px;
+   width : 14em;
+}
+
+.PageNavigationButton1 {
+	color: #ffffff;
+	margin: 0px 3px;
+	padding : 0px;
+	border : none;
+}
+
+.PageNavigationButton2 {
+	color: #000000;
+	background: #ffffff;
+	font-weight: normal;
+	font-size : 7pt;
+	text-align: left;
+	margin: 0px 3px;
+	padding : 0px;
+	width: 9em;
+}
+
+.PageNavigationButton3 {
+	color: #ffffff;
+	background: #336699;
+	font-weight: normal;
+	font-size : 7pt;
+	text-align: center;
+	margin: 0px 3px;
+	padding : 0px;
+	width: 7em;
+}
+
+.ReportBox {
+   margin : 0px;
+	padding : 0px;
+   font : normal 10pt Arial,geneva,helvetica;
+   display : block;
+   height : 100%;
+   width : 100%;
+}
+
+.IconBox {
+	display : block;
+	width : 2em;
+}
+
+.Icon {
+	border : none;
+}
+
+.ResultColumnHeading {
+	display : block; 
+	border : none; 
+	text-align : left;
+	padding : 0px;
+	margin : 0px;
+}
+
+.ResultColumnDataEmphasized {
+	display : block; 
+	font-weight : bold;
+	padding : 0px;
+	margin : 0px;
+}
+
+.ResultColumnDataNormal {
+	display : block; 
+	font-weight : Normal;
+	padding : 0px;
+	margin : 0px;
+}
+
+.CopyrightBox {
+   background : #003366;
+   font : normal 7pt Arial,geneva,helvetica;
+   width : 100%;
+}
+
+.CopyrightBoxItem {
+   width : 100%;
+   text-align : right;
+}
+
+.CopyrightBoxText {
+   color : #ffffff;
+   font : normal 7pt Arial,geneva,helvetica;
+}
+
+.CopyrightBoxLink {
+   color : #ffffff;
+   font : normal 7pt Arial,geneva,helvetica;
+   text-decoration : none;
+}
+
+
+.SidebarBox {
+   background : #f5f5f5;
+	padding : 5px;
+   font : normal 9pt Arial,geneva,helvetica;
+   vertical-align : top;
+   width : 20%;
+   height : 100%;
+}
+
+.SidebarBoxItem {
+   margin-bottom : 5px;
+   width : 100%;
+   vertical-align : top;
+   padding : 0px;
+	clear : both;
+   display : block;
+}
+
+.SidebarBoxItemHidden {
+   margin-bottom : 5px;
+   width : 100%;
+   vertical-align : top;
+   padding : 0px;
+	clear : both;
+   display : none;
+}
+
+.SidebarBoxHeader {
+   color : #003366;
+   font : bold 11pt Arial,geneva,helvetica;
+   Text-Align : center;
+   width : 100%;
+}
+
+.SidebarMenu {
+   text-align : left;
+   margin : 0px 0px 15px 0px;
+   width : 100%;
+}
+
+.SidebarText {
+   color : #003366;
+   font : normal 9pt Arial,geneva,helvetica;
+   width : 100%;
+}
+
+.SidebarSelected {
+   color : #ff6600;
+   font : bold 9pt Arial,geneva,helvetica;
+   Text-Decoration : none;
+   width : 100%;
+}
+
+.SidebarUnselected {
+   color : #003366;
+   font : normal 9pt Arial,geneva,helvetica;
+   width : 100%;
+}
+
+.WaitMessage {
+   color: #ff6600;
+   font : normal 18px Arial,geneva,helvetica;
+   margin-top : 80px;
+}
+
+H3{
+	Font-Family : arial, sans-serif;
+	Font-Size : 12pt;
+	Font-Weight : bold;
+	Color : #000000;
+	}
+
+/*Use this entry for the page headings.*/
+TH.pageheading{
+	Font-Size : 12pt;
+	Font-Weight : bold;
+	Text-Align : left;
+	Vertical-Align : middle;
+	Font-Family : arial, sans-serif;
+   margin-bottom : 20px;
+	}
+
+
+/*Use this entry for section headings.*/
+TH.pagenumber{
+	Font-Family : arial, sans-serif;
+	Font-Size : 9pt;
+	Font-Weight : normal;
+	Text-Align : right;
+	Vertical-Align : middle;
+	}
+
+/*Use this entry for section headings.*/
+th.section{
+   border : 1px solid #003366;
+	Background-Color : #cccccc;
+	Color : #000000;
+	Font-Family : arial, sans-serif;
+	Font-Size : 12pt;
+	Font-Weight : bold;
+	Text-Align : left;
+	Vertical-Align : middle;
+	}
+
+/*Use this entry for column headings.*/
+TH.column{
+	Font-Family : arial, sans-serif;
+	Font-Size : 10pt;
+   border : 1px solid #003366;
+	Background-Color : #eeeeee;
+	}
+
+/*Use this entry for field labels.*/
+TH.label{
+	Font-Family : arial, sans-serif;
+	Font-Size : 9pt;
+	Text-Align : left;
+	}
+
+TD, P{
+	Font-Family : arial, sans-serif;
+	Font-Size : 9pt;
+	}
+
+TD.amount{
+	Font-Family : arial, sans-serif;
+	Text-Align : right;
+	}
+
+DIV.copyright{
+	Font-Family : arial, sans-serif;
+	Font-Size : 8pt;
+	}
+
+/*<agl.folder "Header Tabs" "Used for the Text of Tabs">*/
+	.itemOver /* Color of Text Hover State on Tab  */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemOver:link { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemOver:hover { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemOver:visited { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemOver:active { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemOver:focus { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	.itemText /* Color of Text Off State on Tab  */  { color: #f5f5f5; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemText:link { color: #f5f5f5; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemText:visited { color: #f5f5f5; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemText:active { color: #f5f5f5; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.itemText:focus { color: #f5f5f5; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+/*</agl.folder>*/
+
+/*<agl.folder "Header DropDowns" "Dropdowns">*/
+	.subitemOver, a.subitemOver:link, a.subitemOver:visited, a.subitemOver:active, a.subitemOver:focus, a.subitemOver:hover /* Color of Text Hover State on DropDowns */  { color: #003366; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: center }
+	.subitemText, a.subitemText:link, a.subitemText:visited, a.subitemText:active, a.subitemText:focus /* Color of Text Off State on DropDowns */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: none; text-align: center }
+	.itemBorder /* Used for the outlines of the dropdowns */  { border: solid 1px #f90 }
+	.itemBorderLeft /* Used for the outlines of the dropdowns */  { border-top: solid 1px #369; border-bottom: solid 1px #369; border-left: solid 1px #369; border-right: solid 1px #369; }
+	.itemBorderMiddle /* Used for the outlines of the dropdowns */  { border-top: solid 1px #369; border-bottom: solid 1px #369; border-left: solid 1px #369; border-right: solid 1px #369; }
+	.itemBorderRight /* Used for the outlines of the dropdowns */  { border-top: solid 1px #369; border-bottom: solid 1px #369; border-right: solid 1px #369; border-left: solid 1px #369; }
+/*</agl.folder>*/
+
+/*<agl.folder "Left Side Nav" "Side Navigator Items & Spacing">*/
+	.submenutitle li, a.submenutitle li /* Off State of Main Navigator */   { color: #036; list-style-type: square; margin: 0 0 0 0; padding: 3px 0 2px }
+	.submenutitle2 li, a.submenutitle2 li /* Off State of Sub Navigator */   { color: #036; list-style-type: square; margin: 0 0 0 12px; padding: 2px 0 1px }
+	.submenutitleon li, a.submenutitleon li /* On State Of Navigator */   { color: #f60; list-style-type: square; margin: 0 0 0 0; padding: 3px 0 2px }
+	.submenutitleon2 li, a.submenutitleon2 li /* On State Of Sub Navigator */   { color: #f60; list-style-type: square; margin: 0 0 0 12px; padding: 2px 0 1px }
+	.submenutitle:hover li, .submenutitleon:hover li, a.submenutitle:hover li, a.submenutitleon:hover li /* Hover State Of Main Navigator */   { color: #f60; text-decoration: underline; list-style-type: square; margin: 0 0 0 0; padding: 3px 0 2px }
+	.submenutitle2:hover li, .submenutitleon2:hover li, a.submenutitle2:hover li, a.submenutitleon2:hover li /* Hover State Of Sub Navigator */   { color: #ff6600; text-decoration: underline; list-style-type: square; margin: 0 0 0 12px; padding: 2px 0 1px }
+	a.submenutitle2,  a.submenutitle /*  Left Side nav link state  */  { font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }
+	a.submenutitleon,  a.submenutitleon2 { color: #f60; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }
+	a.submenutitle:hover, a.submenutitle2:hover, a.submenutitleon:hover, a.submenutitleon2:hover { font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: underline }
+	.submenutitle UL,  a.submenutitle UL,  .submenutitleon UL,  a.submenutitleon UL /* Padding of Navigator */  { margin: 0; padding: 0 }
+	.submenutitle2 UL, a.submenutitle2 UL, .submenutitleon2 UL, a.submenutitleon2 UL /* Padding of Sub Navigator */  { margin: 0 0 0 15px; padding: 0 }
+/*</agl.folder>*/
+
+/*<agl.folder "Right Navigator" "SideBar">*/
+	a.blueNav:hover /* Used in Right Navigator Hover State */  { color: #ff6600; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+	.blueNav, A.blueNav /* Used in Right Navigator Link & Off State */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+/*</agl.folder>*/
+
+/*<agl.folder "Main Text Style" "Main text style so you don't have to put class">*/
+	a /* Link Text */   { color: #036; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a:hover /* link hover state */  { color: #f60; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	UL /* Bullet list */  { margin: 0 0 0 25px; padding: 0 }
+	OL { margin: 0 0 0 25px; padding: 0 }
+	li /* Square bullets for bullet list */  { list-style-type: square; margin: 0; padding: 3px 0 2px }
+	.numlist li { list-style-type: decimal; margin: 0; padding: 3px 0 2px }
+	sup  { font-size: smaller; font-style: inherit; line-height: inherit }
+	.supSM { font-size: smaller; font-style: inherit; line-height: inherit; vertical-align: top }
+	.text /* body text as a class */  { color: #000; font-size: 12px; font-family: Arial, Helvetica, sans-serif }
+/*</agl.folder>*/
+
+/*<agl.folder "Top Boxes" "Header boxes">*/
+	.topBoxesFont /* Font for Boxes */  { color: #fff; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold }
+	.topBoxesFont1 /* Font for Header Boxes */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold }
+/*</agl.folder>*/
+
+/*<agl.folder "Bottom Boxes Some Outlined some are not" "Bottom Boxes Some Outlined some are not">*/
+	.Boxes /* Bottom outlined */   { font-size: 12px; font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif; font-weight: bold; background-color: #f5f5f5; border: solid 1px #036 }
+	.Boxes1 /* Bottom box not outlined */  { background-color: #f5f5f5 }
+	.Boxes2 /* Bottom outlined 2nd color */  { background-color: #f5f5f5; border: solid 1px #f90 }
+/*</agl.folder>*/
+
+/*<agl.folder "Form Styles" "Dropdowns & Required">*/
+	.req /* Required field */  { color: #ff6600; font-size: 10px; font-family: Arial, Helvetica, sans-serif }
+	.BoxesFont /* Selected Boxes inside a form Font */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif }
+	a.BoxesFont /* Selected Boxes inside a form link style */  { color: #369; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.BoxesFont:hover /* Selected Boxes inside a form hover style */  { color: #f60; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+/*</agl.folder>*/
+
+/*<agl.folder "Site Name in Upper Right Corner" "Site Name">*/
+	.sitename /* Site Name Upper Right Corner */  { color: #ffffff; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold }
+	a.sitename { color: #ffffff; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }
+	a.sitename:hover { color: #a6bfdb; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }
+/*</agl.folder>*/
+
+/*<agl.folder "Cookie Crumb Headers in Bar" "Headers in bars on top of Content pages">*/
+	.identifierWhiteFont /* First set of text */  { color: #fff; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none; text-transform: uppercase }
+	.identifierOrangeFont /* Second set of text */  { color: #f90; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none; text-transform: uppercase }
+/*</agl.folder>*/
+
+/*<agl.folder "Dark Links & Footnote Links" "Home page & Footnotes">*/
+	.blueNavUnderline, A.blueNavunderline /* Used for footnotes and Home page links Off State */  { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.blueNavUnderline:hover /* Used for footnotes and Home page links On State */  { color: #ff6600; font-size: 11px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+/*</agl.folder>*/
+
+/*<agl.folder "Footer Small Fonts" "Footer items & Copyright date">*/
+	a.stylefootertextsmall:hover /* Small Copyright & footer style hover links */  { color: #ffffff; font-size: 9px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.stylefootertextsmall /* Small Copyright & footer style links */  { color: #ffffff; font-size: 9px; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+	.stylefootertextsmall /* Small Copyright & footer style */  { color: #ffffff; font-size: 9px; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+/*</agl.folder>*/
+
+/*<agl.folder "Bold Text" "Bold & Accent Color">*/
+	STRONG { color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bolder }
+/*</agl.folder>*/
+
+/*<agl.folder "Small Utility Fonts" "Used on Home page footnotes">*/
+	.utility1 /* Disclaimer text black */     { color: #000; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text-decoration: none }
+	a.utility1  { color: #036; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.utility1:hover  { color: #f60; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.style1:hover /* Small Utility light Color Underlined link Hover */  { color: #ff6600; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	a.style1 /* Small Utility Dark Color Underlined link */  { color: #036; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text-decoration: underline }
+	.style1 /* Small Utility Dark Color */  { color: #036; font-size: 10px; font-family: Arial, Helvetica, sans-serif }
+/*</agl.folder>*/
+
+/*<agl.folder "Hide/Show Styles" "Used to hide and show elements along with JavaScript">*/
+	.expand { visibility: visible; position: relative }
+	.collapse { visibility: hidden; position: absolute }
+/*</agl.folder>*/
+
+
+/* CCIV Style */
+
+.AlertHeading {
+   color : red;
+   Font-Family : arial, sans-serif;
+   Font-Size : 12pt;
+   Font-Weight : bold;
+   text-decoration: none;
+}
+
+.AlertText {
+   color : red;
+   Font-Family : arial, sans-serif;
+   Font-Size : 9pt;
+   Font-Weight : bold;
+   text-decoration: none;
+}
+
+.AlertBox {
+   border : 2px double #D40A0A;
+   background-color: white;
+   color : #C00000;
+   font-weight: bold;
+   padding : 2px 5px;
+   margin-top : 15px;
+   margin-bottom : 15px;
+}
+
+.RegularText {
+   color : #003366;
+   Font-Family : arial, sans-serif;
+   Font-Size : 9pt;
+   Font-Weight : bold;
+   text-decoration: none;
+}
+
+.RegularBox {
+   border : 2px double #003366;
+   background-color: white;
+   color : #003366;
+   font-weight: bold;
+   padding : 2px 5px;
+   margin-top : 15px;
+   margin-bottom : 15px;
+}
+
+
+.BigWarningButton {
+   background : #cccccc;
+   border-left : none;
+   border-top : none;
+   border-bottom : 3px solid #eeeeee;
+   border-right : 3px solid #eeeeee;
+   color : red;
+   Font-Family : arial, sans-serif;
+   Font-Size : 16pt;
+   Font-Weight : bold;
+   text-decoration: none;
+}
+
+.BigWarningButton:hover {
+   background : red;
+   border-left : none;
+   border-top : none;
+   border-bottom : 3px solid #eeeeee;
+   border-right : 3px solid #eeeeee;
+   color :white;
+   Font-Family : arial, sans-serif;
+   Font-Size : 16pt;
+   Font-Weight : bold;
+   text-decoration: none;
+}
+
+
+
+
+/* style for additional rider information */
+.AddMessageLayer  { background-color:#ffffff;
+        position:relative; top:1px; left:0px; width:0px; height: 80px;
+        z-index:99;  display:none;}
+
+.AddMessageBox {
+   border : 1px solid #003366;
+   background : #ffffff;
+   margin-bottom : 5px;
+   font-family : Arial,geneva,helvetica;
+   font-size : 9pt;
+   font-weight : normal;
+   vertical-align : top;
+}
+
+
+.AddMessageHeader {
+   border-bottom : 1px solid #003366;
+   background :  #eeeeee;
+   margin-bottom : 1px;
+   font-family : Arial,geneva,helvetica;
+   font-size : 9pt;
+   font-weight : bold;
+   text-align: left;
+   vertical-align : top;
+}
+
+.AddMessageSubHeader {
+   border-bottom : 1px solid #003366;
+   background :  #ffffff;
+   margin-bottom : 3px;
+   font-family : Arial,geneva,helvetica;
+   font-size : 9pt;
+   font-weight : bold;
+   text-align: left;
+   vertical-align : top;
+}
+
+
+	.AddMessageButton {    border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.AddMessageButton:link { border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.AddMessageButton:hover { border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.AddMessageButton:visited { border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.AddMessageButton:active { border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+	a.AddMessageButton:focus { border : 1px solid #003366;Background-Color : #eeeeee; color: #036; font-size: 11px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; line-height: 20px; text-decoration: none; text-align: center }
+
+
+	.MoreInfo /* Site Name Upper Right Corner */  { color: red; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold }
+	a.MoreInfo { color: #036; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }
+	a.MoreInfo:hover { color: #f60; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; text-decoration: none }

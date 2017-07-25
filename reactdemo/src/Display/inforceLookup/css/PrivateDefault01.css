@@ -1,0 +1,174 @@
+/* pageTopArea includes logoControlContainer, utilityNavContainer, searchBarContainer, topNavContainer, and topContentContainer */
+.pageTopArea{
+    height:134px;
+	background:#fff url("../images/pageTopAreaBG.jpg") top left repeat-x; /* logo image is gif with this color as background, not transparent - so logo background and this background are not distinguishable */
+	position:relative;
+	margin:0 0 1px 0;
+	 /* don't use this if also using position:relative */
+	padding:0px 0px 0px 0px;
+	/* position:relative; used if absolute positioning is used, dont' use with overflow - currently not used for this css */
+}
+
+.topArea{float:left; height:79px;}
+
+/* logoControlContainer will display on left, utililtyNavContainer and searchBarContainer on right */
+.logoControlContainer{
+	float:left;
+	height:36px; /* of logo image */
+	margin:0px 0 0px 0px;  /* in addition to logo */
+	padding:21px 0 0 7px;
+	width:217px; /* of logo image */
+}
+
+.logoControlContainer img{}
+
+#footerContainer{clear:both;background-color:#1f398e; height:55px; text-align:center; min-width:960px;}
+
+#bottomNavContainer {
+	color:#fff;
+	clear:both;
+	padding:0px 5px 5px 5px;
+}
+
+#bottomNavContainer ul {
+	list-style:none;
+	margin:0;
+	padding:10px 0 0 0;
+}
+
+#bottomNavContainer ul li {
+	display:inline;
+}
+
+#bottomNavContainer ul li a{
+	color:#fff;
+	font-size:11px;
+}
+#bottomNavContainer ul li a:link{
+
+}
+#bottomNavContainer ul li a:visited{
+
+}
+#bottomNavContainer ul li a:hover{
+
+}
+#bottomNavContainer ul li a:visited{
+
+}
+
+#contentFooter {
+	color:#fff;
+	background-color:#FFFFFF;
+	font-size:11px;
+	padding:0px 5px 0px 5px;
+}
+
+.MessageText_Error {
+    color: #600;
+}
+
+li {
+    list-style-type: square;
+    margin: 0;
+    padding: 3px 0 2px;
+}
+
+/*.BacktrackBox {
+	margin-top: 4px;
+	margin-bottom: 3px;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-bottom: 1px solid #003366;
+	font: normal 9pt Arial, geneva, helvetica;
+	padding-bottom: 3px;
+	display: block;
+}*/
+
+.BacktrackBoxNew {
+  margin-top: 4px;
+	/*margin-bottom: 3px;*/
+  margin-top: 3px;
+	padding-left: 1em;
+	padding-right: 1em;
+	/*border-bottom: 1px solid #003366;*/
+  border-top: 1px solid #003366;
+	font: normal 9pt Arial, geneva, helvetica;
+	/*padding-bottom: 3px;*/
+  padding-top: 3px;
+	display: block;
+}
+
+.ReportBox {
+    margin: 0px;
+    padding: 0px;
+    font: normal 10pt Arial,geneva,helvetica;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.TextHeader {
+    color: #036;
+    font-weight: bold;
+    border: 1px solid #036;
+    Background-Color: #eee;
+    margin: 0em 2em;
+}
+
+
+.element {
+    width: 16em;
+    display: block;
+    border: medium none;
+    text-align: left;
+}
+
+.element2{
+    border-bottom: 1px solid #ccc;
+}
+
+.element3{
+	z-index: 1;
+	overflow: auto;
+	overflow-x: hidden;
+	WIDTH: 560px;
+	HEIGHT: 100px;
+	BORDER: 1px solid #336699;
+	BACKGROUND-COLOR: #f5f5f5;
+	display: none;
+}
+
+th.section {
+    border: 1px solid #036;
+    Background-Color: #ccc;
+    Color: #000;
+    Font-Family: arial, sans-serif;
+    Font-Size: 12pt;
+    Font-Weight: bold;
+    Text-Align: left;
+    Vertical-Align: middle;
+}
+
+.tdContent {
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 15px;
+    PADDING-BOTTOM: 5px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 0px;
+}
+
+.footerSpan{
+    font-size: 11px;
+}
+
+.elme1 {
+	margin-left: 1em;
+}
+
+.elme2 {
+	margin-left: 3em;
+}

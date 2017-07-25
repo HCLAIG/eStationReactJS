@@ -1,0 +1,19 @@
+﻿.paging-nav {
+  text-align: right;
+  padding-top: 3px;
+  background: #999999;
+}
+
+.paging-nav a {
+  margin: auto 2px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1px 5px;
+  background: #EEF4F9;
+  color: #1e398d;
+}
+
+.paging-nav a:hover,.paging-nav .selected-page {
+  background: #d6dbe0;
+  font-weight: bold;
+}

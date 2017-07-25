@@ -1,0 +1,3102 @@
+/* BROWSER HACKS
+ - because of browser differences, there may be occasions your style will look different in various browsers (Firefox verse IE)
+ - by targeting a specific browser you can adjust the style as needed for a particulat browser, this is usually done with browser hacks.
+ - for more stability, Titan includes a browser detection that adds a class name in the html tag for the specific browser being used.
+ - if you need to target a specific browser use the following class names: 
+ - IE, IE7, IE6, Firefox, AppleMAC-Safari
+ - other class names may be possible, open your web page in the particular browser you are interested in targeting and look for the class name in the html tag.
+ - To Use:
+    - default style:
+        .Calendar .calendarItem .location {styles} 
+    - for IE browsers only:
+        .IE .Calendar .calendarItem .location {styles}  
+*/
+
+/* DO NOT USE use these class names on div tags
+ .content
+ .fieldwrapper
+ .h1
+ .h2
+ .h3
+ .h4
+ .h5
+ .h6
+*/
+
+/* DO NOT USE use these class names on any tag
+ .header
+*/
+
+/* someHtmlTag {
+	any style:value;
+}  
+ - causes wkst to break - if the tag in the wkst is not using a particular style that is written for someHtmlTag - ie. p {}, those styles will be used by wkst
+ - DO - have an additional id or class selector with an html tag - .Freeform p {}
+ - DO NOT - have an html tag without any other id or class selectors before it - p {}
+ - EXCEPTIONS - h1, h2, h3, h4, h5, h6 should be written without additional selectors to allow the styles to show in the text editor drop down
+*/
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		RESETS: te = text editor, t = titan, d = display side, m/p = margin & padding
+	 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* Resetting 
+ - default styles can vary from browser to browser
+ - it is common practice for css to reset styles for a more consistant look across browsers
+ - this section resets those styles for your whole web site, allowing for style consistancy and allowing for easy-quick site wide changes by changing a property's value in the reset area.
+ - you can change any of these styles for particular classes and ids as you need, do not include these changes in the reset, but make changes in the area starting at and below the START FIXED NAME CONTENT BOUNDARIES area
+*/
+
+/* RULE (tmte rule) for resetting only: 
+ - tmte stands for t = titanBody, m = mainBody, te = text editor
+ - need to list:
+ .titanBody - for display side
+ .mainBody - for wkst
+ .Freeform, FormEditor, .FAQ, etc - for wkst, blocks with a text editor
+ - this will allow styles to show up in display side, wkst blocks and text editor
+ - when upgrading Titan, there may be new blocks added that use a text editor, those will need to be added to the css at upgrade
+*/  
+
+/* list of possible things to zero out, what you include will depend on design 
+ - if using m/p other than browser default or zeroed out, make sure to use the tmte rule or add on individual id or class
+ - do not change from margin:0px; padding:0px;
+ - do not need to use tmte rule in the zeroing out
+ - .titanBody 
+    - it is normal practice to zero out
+ - div 
+    - do not remove 
+ - form
+    - do not use here 
+ 		- form should not be added in html for layout or blocks
+ - .mainBody
+    - do not use  here
+    - doesn't do anything if added
+ - table and table related tags
+    - do not use here 
+ 		- zeroed out padding will disable the td cell-padding used with te
+ - p, h1, h2, h3, h4, h5, h5, h6 
+ 		- depends on your design
+ 	 	- if you want to zero m/p between h's and p need to zero out both
+		- may need to put some m/p back on p for freeform, form editor, and other block class names
+ - blockquote 
+ 		- depends on design
+		- it's normal to have blockqoute have larger left and right margin to set it a part for normal text
+ - img 
+ 		- depends on design
+		- see further below for additional img reset
+ - ol, ul, li, dl, dt, dl 
+ 		- depends on design 
+		- may be best to leave it out of here, apply directly to specific lists
+ 		- if you want list-style:none - do it directly on the list you want to use it on
+ - fieldset 
+		- see further below for additional fieldset reset
+ - hr 
+ 		- depends on design 
+		- see further below for additional hr reset
+ - input 
+ 		- depends on design 
+		- if zeroed out need to make sure you put some additional css to fix browser differences
+		- see further below for notes
+ - textarea 
+ 		- depends on design
+ - pre 
+ 		- depends on design
+*/
+.titanBody, div, img {
+	margin:0px;
+	padding:0px;
+} /* end of zeroing out */
+
+/* DO NOT USE ON .titanBody - if doing one, do all listed - keep margin-top 0 - for little firefox thing */
+.mainBody p,.mainBody ol,.mainBody ul,.mainBody dl,.mainBody blockquote,
+.Freeform p,.Freeform ol,.Freeform ul,.Freeform dl,.Freeform blockquote,
+.FAQ p,.FAQ ol,.FAQ ul,.FAQ dl,.FAQ dl,.FAQ blockquote,
+.FormEditor p,.FormEditor ol,.FormEditor ul,.FormEditor dl,.FormEditor blockquote { 
+	margin-top:0px;
+	margin-bottom:10px;
+	line-height:16px;
+}
+
+/* Do not apply style directly to the body tag 
+	- use the titanBody class, not the body html tag
+	- pretty much stick with background sort of things 
+*/
+.titanBody {
+	min-width:995px;
+ 	background-color:#fff;
+}
+
+.IE6 .titanBody{
+	width: expression(document.body.clientWidth < 997? "995px" : document.body.clientWidth > 1602? "1600px" : "auto");
+	}
+
+
+/* default font for whole page 
+ - listing .mainBody and blocks with text editor allows font to be seen in wkst and text editor 
+ - relative sizes, like em & %, don't always show as the right size in wkst - computed value
+*/
+.titanBody, .mainBody, .Freeform, .FormEditor, .FAQ, 
+.mainBody input, .mainBody select, .mainBody textarea,  
+.titanBody input, .titanBody select, .titanBody textarea, 
+.FAQ input, .FAQ select, .FAQ textarea,
+.FormEditor input, .FormEditor select, .FormEditor textarea,
+.Freeform input, .Freeform select, .Freeform textarea {
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif;	
+	font-size: 12px; 
+}
+
+/* separated out from above so inputs are not affected - basically input */
+.titanBody, .mainBody, .Freeform, .FormEditor, .FAQ,
+.mainBody textarea, /* need to recheck this */ 
+.titanBody textarea, 
+.FAQ textarea,
+.FormEditor textarea,
+.Freeform textarea  {
+	line-height:16px;
+}
+
+/* to remove border from images */
+.titanBody img, .mainBody img, .Freeform img, .FormEditor img,  .FAQ img{
+	border:0;
+}
+
+/* horizontal rule */
+.titanBody hr, .mainBody hr, .Freeform hr, .FormEditor hr,  .FAQ hr{
+	background-color:#1A3481;
+	border:0;
+	color:#1A3481;
+	height:1px;
+}
+
+/* default for display and reset to defeat wkst css and how it shows fieldsets in wkst - like in Calendar and Display side upload 
+	- need to keep border, background, padding and margin here - do not remove these 
+	- can change values and add other properties 
+*/
+.titanBody fieldset, .mainBody fieldset, .Freeform fieldset, .DisplaySideUpload fieldset, .AggregationFilter fieldset, .Calendar fieldset   {
+	background: #fff;
+	border:0;
+	margin: 0px;
+	padding: 0px;
+}
+
+.titanBody #rightZone fieldset{background-color:#FAFBF3;}
+
+/* h1-h6 are the only ones that should have no preceding selectors, large margins and padding will not look good in te paragraph style drop down */
+h1 { /* titleBarContainer */
+	color:#346699;
+	font:bold 18px Verdana, Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;/* this is a firefox bug fix */
+}
+
+h2 {
+	color:#677BAE;
+	font:bold 14px Verdana, Arial, Helvetica, sans-serif;	
+	margin:0px 0px 10px 0px;
+	padding:0px;/* this is a firefox bug fix */
+}
+
+h3 { /* block title */
+	color:#1A3481;
+	font:bold 12px Verdana, Arial, Helvetica, sans-serif;
+	margin:0px 0px 10px 0px;
+	padding:0px;/* this is a firefox bug fix */
+}
+
+h4{/* block links  */
+	color:#1A3481;
+	font:bold 12px Verdana, Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;/* this is a firefox bug fix */	
+}
+
+h5{
+	color:#707070;
+	font:bold 11px Verdana, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;	
+	margin:0px;
+	padding:0px;/* this is a firefox fix */	
+}
+
+h6 {
+	color:#666;
+	font:bold 12px Verdana, Arial, Helvetica, sans-serif;
+	margin:0px;
+	padding:0px;/* this is a firefox bug fix */	
+}
+
+/* all blocks should be listed here */
+.Freeform,
+.Calendar,
+.FAQ,
+.Aggregation, /* filter */
+.FormEditor,
+.SearchResults,
+.SearchResultsCombined,
+.SiteMap,
+.TOCBlock,
+.WhatsNew {
+	clear:both;
+margin-bottom:10px;
+} 
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+	
+	START FIXED NAME CONTENT BOUNDARIES
+	
+	|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  */
+#mainBody{
+	background-color:#fff;
+	margin:0 auto; /* centers content in display */
+	/* position:relative; used if absolute positioning is used - currently not used for this css */
+	width:auto; /* total width for display area - fixed width layout */	
+}
+
+/* pageTopArea includes logoControlContainer, utilityNavContainer, searchBarContainer, topNavContainer, and topContentContainer */
+#pageTopArea{
+    height:134px;
+	background:#fff url(images/pageTopAreaBG.jpg) top left repeat-x; /* logo image is gif with this color as background, not transparent - so logo background and this background are not distinguishable */
+	position:relative;
+	margin:0 0 1px 0;
+	 /* don't use this if also using position:relative */
+	padding:0px 0px 0px 0px;
+	/* position:relative; used if absolute positioning is used, dont' use with overflow - currently not used for this css */
+}
+
+#topArea{float:left; height:79px;}
+
+/* logoControlContainer will display on left, utililtyNavContainer and searchBarContainer on right */
+#logoControlContainer1{
+	float:left;
+	height:30px; /* of logo image */
+	margin:0px 0 0px 0px;  /* in addition to logo */
+	padding:21px 0 0 7px;
+	width:217px; /* of logo image */	
+}
+
+
+#utilityNavContainer {
+	position:absolute; /* of logo */
+	height:34px;
+	top:15px;
+	right:320px;
+	margin:0px 0px 0px 0px;
+	overflow:hidden; 
+	text-align:right; 	
+	width:300px; /* width to fill space and place better - in relation to logo and search bar */	
+	}   
+
+.IE6 #utilityNavContainer {
+	margin:0px 0px 0px 0px;
+	right:340px;
+}
+
+#utilityNavContainer ul {
+	list-style:none;
+	margin:10px 10px 0 0;
+	padding:0px;
+}
+
+#utilityNavContainer ul li {
+	display:inline;	
+	margin:0px 0px 0 0px; 
+}
+
+/* to make changes to default link styles */
+#utilityNavContainer ul li a {
+	font:11px Arial, Helvetica, sans-serif;
+}
+
+#utilityNavContainer ul li a:link {
+
+}
+
+#utilityNavContainer ul li a:visited{
+
+}
+
+#utilityNavContainer ul li a:hover {
+
+}
+
+#utilityNavContainer ul li a:active{
+
+}
+
+#searchBarContainer {
+	float:right; /* of utility */
+	margin:15px 10px 0 0;
+	padding:6px 0 0 16px; /* use padding because of IE doubled margin bug */
+	width:288px; /* see utility notes */	
+	height:28px;
+	background-color:#e2e1dc;
+}
+
+/* this set of css helps with the textbox and button heights to be equal in firefox and ie and have the top and bottom of each line up with each other */
+#searchBarContainer #searchTerms{
+	font-size:11px;
+	padding:1px;
+	width:200px;	
+}
+
+#searchBarContainer #searchGo{
+	border:0px solid #b1afa6;
+	padding:0;
+	height:20px;
+	width:56px;
+	background-color:#b1afa6;
+	color:#fff;
+	font-size:11px;
+}
+
+.Firefox #searchBarContainer #searchGo{
+	padding:0;
+}
+
+.IE #searchBarContainer #searchGo{
+	height:22px;
+	margin-bottom:-1px;
+}
+
+
+/* this set of css is if you are using an image for the button
+#searchBarContainer {
+	float:right;
+	padding:8px 8px 0px 0px;
+}
+
+#searchBarContainer input#searchTerms {
+	width:153px;
+	font-size:11px;
+	padding:2px;
+	vertical-align:middle;
+}
+
+.IE #searchBarContainer input#searchTerms {
+	margin:-1px 0px 0px 0px;
+}
+
+#searchBarContainer input#searchGo {
+	padding:0px;
+	background:url(images/search-button.gif) no-repeat center transparent; 
+	border:0;
+	font-size:0px;
+	height:25px;
+	width:66px;
+	cursor:pointer;
+	vertical-align:middle;
+	text-decoration:none;
+	color:#ccc;	
+	margin:0px 0px 0px -3px;
+} */
+
+#topNavContainer {
+	float:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#fff;
+	clear:both; 
+	padding:0;	
+	margin:0px 0px 0px 0px;
+}
+
+#topNavContainer ul{
+	position:relative;
+	width:960px;
+	list-style:none; /* removes bullet */
+	margin:0px;
+	padding:0; /* puts list in vertical center */	
+}
+
+#topNavContainer ul li {
+	float:left;
+	height:27px;
+	margin:0;
+		/* displays items in a line */
+}
+
+
+
+/* to make changes to default link styles */
+#topNavContainer ul li a{
+	float:left;
+	display:block;	
+	color:#fff;	
+	height:15px;
+	border-left:1px solid #336799;
+	border-right:1px solid #517ca6;
+	margin:1px 0 0 0;
+	padding:6px 10px 5px 10px;
+	text-decoration:none;	
+	text-transform:uppercase; 	
+}
+
+.IE #topNavContainer ul li a{	
+		
+}
+
+#topNavContainer ul li a:link{
+}
+
+#topNavContainer ul li a:visited {
+
+}
+
+#topNavContainer ul li a:hover {
+	color:#000;
+	border-left:1px solid #336799;
+	border-right:1px solid #517ca6;
+	background: #e7eaf1 url(images/AIGLBtopNavBG.jpg) top left repeat-x;
+}
+
+#topNavContainer ul li a:active {
+
+}
+
+#topNavContainer ul li a.current  {
+	color:#000;
+	border-left:1px solid #336799;
+	border-right:1px solid #517ca6;
+	background: #e7eaf1 url(images/AIGLBtopNavBG.jpg) top left repeat-x;
+
+}
+
+#topContentContainer {/* if you're not putting images in here, you might want to add padding so text doesn't touch the container edge - or add the padding to the blocks that are in the topCenter Container */
+
+	padding:0 0 0 0px;
+	background-color:#e2e1dc;
+	height:106px;
+	/*z-index:1;*/
+	
+}
+
+#contentArea {
+	min-width:980px;
+	clear:both; 
+	padding:0px 0px 100px 0px;
+	background-color:#fff;
+
+}
+
+.IE6 #contentArea{
+	width: expression(document.body.clientWidth < 982? "980px" : document.body.clientWidth > 1602? "1600px" : "auto");
+	}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		LEFT CONTENT: includes left navigation
+	 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+#leftContentContainer {
+	float:left; 
+	width:190px;
+}
+
+#leftZone {
+	background-color:#ddd;
+	border:1px 	solid #677BAE;
+	margin:50px 5px 10px 5px;
+	padding:5px;
+}
+
+/* ==== left content navigation ==== 
+==================================== */
+
+
+/* properties for first, second and third level nav could be combined into one specification if they are all the same */
+/* first level nav */
+#contentNavContainer ul{
+	width:180px;
+	list-style:none; /* removes bullets */
+	margin:0px;
+	padding:0px;
+}
+
+#contentNavContainer ul li {
+
+}
+
+#contentNavContainer ul li a {
+text-align:right;
+	border-bottom:1px solid #cccccc;
+	color:#666666; 
+	display:block; 	
+	font:normal 12px Arial, Helvetica, sans-serif;		
+	height:100%;
+	padding:7px 10px 5px 10px;
+	text-decoration:none;	
+}
+
+#contentNavContainer ul li a:link {
+
+}
+
+#contentNavContainer li a:visited{
+
+}
+
+#contentNavContainer ul li a:hover {
+	color:#1A3481;
+}
+
+#contentNavContainer ul li a.current {
+	color:#1A3481; 
+}
+
+#contentNavContainer ul li a:active {
+
+}
+
+/* second level nav */
+#contentNavContainer li ul {
+
+}
+
+#contentNavContainer li ul li {
+
+}
+
+#contentNavContainer li ul li a {
+	padding:7px 10px 5px 10px;
+}
+
+#contentNavContainer li ul li a:link {
+
+}
+
+#contentNavContainer li ul li a:visited{
+
+}
+
+#contentNavContainer li ul li a:hover {
+
+}
+
+#contentNavContainer li ul li ul a.current {
+
+}
+
+#contentNavContainer li ul li a:active {
+
+}
+
+/* third level nav */
+#contentNavContainer li ul li ul{
+
+}
+
+#contentNavContainer li ul li ul li {
+
+}
+
+#contentNavContainer li ul li ul li a{
+	padding:7px 5px 2px 40px;
+}
+
+#contentNavContainer li ul li ul li a:link {
+
+}
+
+#contentNavContainer li ul li ul li a:visited{
+
+}
+
+#contentNavContainer li ul li ul li a:hover {
+
+}
+
+#contentNavContainer li ul li ul li a.current {
+
+}
+
+#contentNavContainer li ul li ul li a:active {
+
+}
+
+/* ==== top NAV sub navigation ==== 
+==================================== */
+#subNavContainer {
+float:left;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#fff;
+	clear:both; 
+	padding:0;	
+	margin:0px 0px 0px 0px;
+} 
+
+/* properties for first, second and third level nav could be combined into one specification if they are all the same */
+/* first level nav */
+#subNavContainer ul{
+	width:980px;
+	list-style:none; /* removes bullet */
+	margin:0px;
+	padding:0; /* puts list in vertical center */	
+}
+
+#subNavContainer ul li {
+float:left;
+	height:28px;
+	margin:0;
+
+}
+
+#subNavContainer ul li a {
+float:left;
+	display:block;	
+	color:#000;	
+	height:15px;
+	margin:0px 0 0 0;
+	padding:6px 10px 5px 10px;
+	text-decoration:none;	 	
+}
+
+#subNavContainer ul li a:link {
+
+}
+
+#subNavContainer li a:visited{
+
+}
+
+#subNavContainer ul li a:hover {
+	color:#1A3481;
+}
+
+#subNavContainer ul li a.current {
+	color:#1A3481; 
+}
+
+#subNavContainer ul li a:active {
+
+}
+
+/* second level nav */
+#subNavContainer li ul {
+
+}
+
+#subNavContainer li ul li {
+
+}
+
+#subNavContainer li ul li a {
+	padding:0;
+}
+
+#subNavContainer li ul li a:link {
+
+}
+
+#subNavContainer li ul li a:visited{
+
+}
+
+#subNavContainer li ul li a:hover {
+
+}
+
+#subNavContainer li ul li ul a.current {
+
+}
+
+#subNavContainer li ul li a:active {
+
+}
+
+/* third level nav */
+#subNavContainer li ul li ul{
+
+}
+
+#subNavContainer li ul li ul li {
+
+}
+
+#subNavContainer li ul li ul li a{
+	padding:0;
+}
+
+#subNavContainer li ul li ul li a:link {
+
+}
+
+#subNavContainer li ul li ul li a:visited{
+
+}
+
+#subNavContainer li ul li ul li a:hover {
+
+}
+
+#subNavContainer li ul li ul li a.current {
+
+}
+
+#subNavContainer li ul li ul li a:active {
+
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		CENTER CONTENT
+	 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+#contentContainer { 	
+}
+
+#centerZone {
+	clear:both;
+	float:left; /* floats left of rightContent */
+	padding:10px;
+	width:680px;
+	max-width:680px;
+	min-width:500px;
+}
+
+.IE6 #centerZone{
+	width: expression(document.body.clientWidth < 682? "680px" : document.body.clientWidth > 682? "680px" : "auto");
+	}
+	
+#breadCrumbContainer  {
+	color:#142f80;
+	float:left; /* float left of pageTools */
+	font:11px Arial, Helvetica, sans-serif;
+	padding:10px 0px 20px 10px;	
+}
+
+
+
+#breadCrumbContainer ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+#breadCrumbContainer ul li{
+	display:inline;
+}
+
+#breadCrumbContainer ul li a{
+	font:11px Arial, Helvetica, sans-serif;
+	text-decoration:none; /* removes underline from links */
+}
+
+#breadCrumbContainer ul li a:link{
+}
+
+#breadCrumbContainer ul li a:visited{
+
+}
+
+#breadCrumbContainer ul li a:hover{
+	text-decoration:underline;
+}
+
+#breadCrumbContainer ul li a:active{
+
+}
+
+#pageTools{
+	float:right; /* float right of breadcrumbs */
+	margin:5px 15px 0px 0px; 
+}
+
+#pageTools ul {
+	list-style:none; 
+	padding:3px 0px 3px 0px; /* used with the background images for email and print */
+	margin:0px;
+}
+
+#pageTools ul li {
+	display:inline;	
+	padding:3px 0px 3px 0px; /* used with the background images for email and print */
+}
+
+#pageTools .email{
+	background:url(images/email.gif) no-repeat center left; /* adds icon to email list item */
+	margin:0px 15px 0px 0px;/* puts margin space between the two page tools */
+}
+
+#pageTools .print {
+	background:url(images/print.gif) no-repeat center left; /* adds icon to print list item */
+}
+
+#pageTools a {	
+	font:11px Arial, Helvetica, sans-serif; 
+	padding:0px 0px 0px 22px; /* puts space between icon and link text */
+	text-decoration:none; 
+}
+
+#pageTools a:link{
+	
+}
+
+#pageTools a:visited {
+	
+}
+
+#pageTools a:hover {
+	text-decoration:underline;
+}
+
+#pageTools a:active {
+	
+}
+
+#titleBarContainer {
+	clear:both;/* clear from breadcrumbs and pageTools */
+	padding:0px 0 0px 0;
+}
+
+#pageUpdated{
+padding:0 0 20px 0;
+margin:0;
+}
+
+#pageUpdated p{
+font-family:Arial, Helvetica, sans-serif;
+font-size:11px;
+color:#a0a0a0;
+padding:0;
+margin:0;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		RIGHT CONTENT
+	 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+#rightZone {
+	float:right; /* floats right of centerContent */	
+	width:190px; 
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		BOTTOM NAV - CONTENT FOOTER - POWEREDBY
+	 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+#bottomNavContainer {			
+	color:#fff;
+	clear:both;
+	padding:0px 5px 5px 5px;
+}
+
+#bottomNavContainer ul {
+	list-style:none;
+	margin:0;
+	padding:10px 0 0 0;
+}
+
+#bottomNavContainer ul li {
+	display:inline;
+}
+
+#bottomNavContainer ul li a{
+	color:#fff;
+	font-size:11px;
+}
+#bottomNavContainer ul li a:link{
+
+}
+#bottomNavContainer ul li a:visited{
+
+}
+#bottomNavContainer ul li a:hover{
+
+}
+#bottomNavContainer ul li a:visited{
+
+}
+#contentFooter {
+	color:#fff;
+	background-color:#FFFFFF;	
+	font-size:11px;
+	padding:0px 5px 0px 5px;
+}
+
+#poweredBy {	
+	color:#CCCCCC;
+	background-color:#FFFFFF;
+	text-align:right;
+	font-size:10px;
+	padding:0px 5px 0px 5px;
+}
+
+#poweredBy a{
+	color:#cccccc;
+	font-size:10px;
+}
+
+#footerContainer{clear:both;background-color:#1f398e; height:55px; text-align:center; min-width:960px;}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		Classes used by wkst TE Drop Down
+	 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  */
+.imgFloatLeft {
+	float:left;
+	margin:0px 5px 0px 0px;
+}	 
+
+.imgFloatRight {
+	float:right;
+	margin:0px 0px 0px 5px;
+}	 
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+		LINKS - general & for blocks
+	 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  */
+/* instead of plain a:link - need to have the following to avoid affecting titan wkst anchor tags 
+	- this will be default for whole site, there will be times you will want to change link styles like on the navigation menus 
+	- titanBody and mainBody may not need to be listed here, but left anyway 
+	- if using same style on everything, only ones you really have to list are titanBody, mainBody and the ones with a text editor */
+.titanBody a:link, 
+.mainBody a:link,
+.Freeform a:link,
+.Calendar a:link,
+.FAQ a:link,
+.Aggregation a:link, /* filter */
+.FormEditor a:link,
+.SearchResults a:link,
+.SearchResultsCombined a:link,
+.SiteMap a:link,
+.TOCBlock a:link,
+.WhatsNew a:link {
+	color:#346699;
+	font:11px Arial, Helvetica, sans-serif;
+	text-decoration:none;	
+}
+
+.titanBody a:visited, 
+.mainBody a:visited, 
+.Freeform a:visited,
+.Calendar a:visited,
+.FAQ a:visited,
+.Aggregation a:visited,/* filter */
+.FormEditor a:visited,
+.SearchResults a:visited,
+.SearchResultsCombined a:visited,
+.SiteMap a:visited,
+.TOCBlock a:visited,
+.WhatsNew a:visited {
+	color:#346699;
+	font:11px Arial, Helvetica, sans-serif;
+	text-decoration:none;	
+}
+
+.titanBody a:hover, 
+.mainBody a:hover,
+.Freeform a:hover,
+.Calendar a:hover,
+.FAQ a:hover,
+.Aggregation a:hover,/* filter */
+.FormEditor a:hover,
+.SearchResults a:hover,
+.SearchResultsCombined a:hover,
+.SiteMap a:hover,
+.TOCBlock a:hover,
+.WhatsNew a:hover {
+	color:#346699;
+	font:11px Arial, Helvetica, sans-serif;
+	text-decoration:underline;
+}
+
+.titanBody a:active, 
+.mainBody a:active, 
+.Freeform a:active,
+.Calendar a:active,
+.FAQ a:active,
+.Aggregation a:active,/* filter */
+.FormEditor a:active,
+.SearchResults a:active,
+.SearchResultsCombined a:active,
+.SiteMap a:active,
+.TOCBlock a:active,
+.WhatsNew a:active {
+	color:#346699;
+	font:11px Arial, Helvetica, sans-serif;
+	text-decoration:none;	
+}	
+
+/* ==== default link styles for a in h4 - block title - listed all together for consistancy ==== */
+.Calendar h4 a:link,
+.FAQ h4 a:link,
+.Aggregation h4 a:link,/* filter */
+.FormEditor h4 a:link,
+.SearchResults h4 a:link,
+.SearchResultsCombined h4 a:link,
+.SiteMap h4 a:link,
+.TOCBlock h4 a:link,
+.WhatsNew h4 a:link {
+	color:#346699;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.Calendar h4 a:visited,
+.FAQ h4 a:visited,
+.Aggregation h4 a:visited,/* filter */
+.FormEditor h4 a:visited,
+.SearchResults h4 a:visited,
+.SearchResultsCombined h4 a:visited,
+.SiteMap h4 a:visited,
+.TOCBlock h4 a:visited,
+.WhatsNew h4 a:visited {
+	color:#346699;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.Calendar h4 a:hover,
+.FAQ h4 a:hover,
+.Aggregation h4 a:hover,/* filter */
+.FormEditor h4 a:hover,
+.SearchResults h4 a:hover,
+.SearchResultsCombined h4 a:hover,
+.SiteMap h4 a:hover,
+.TOCBlock h4 a:hover,
+.WhatsNew h4 a:hover {
+	color:#346699;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+.Calendar h4 a:active,
+.FAQ h4 a:active,
+.Aggregation h4 a:active,/* filter */
+.FormEditor h4 a:active,
+.SearchResults h4 a:active,
+.SearchResultsCombined h4 a:active,
+.SiteMap h4 a:active,
+.TOCBlock h4 a:active,
+.WhatsNew h4 a:active  {
+	color:#346699;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+/* ==== default link styles for a in p - 'Read More..." - listed all together for consistancy ==== */
+.Calendar p a:link,
+.FAQ p a:link,
+.Aggregation p a:link,/* filter */
+.FormEditor p a:link,
+.SearchResults p a:link,
+.SearchResultsCombined p a:link,
+.SiteMap p a:link,
+.TOCBlock p a:link,
+.WhatsNew p a:link {
+	color:#346699;
+	text-decoration:none;
+}
+
+.Calendar p a:visited,
+.FAQ p a:visited,
+.Aggregation p a:visited,/* filter */
+.FormEditor p a:visited,
+.SearchResults p a:visited,
+.SearchResultsCombined p a:visited,
+.SiteMap p a:visited,
+.TOCBlock p a:visited,
+.WhatsNew p a:visited {
+	color:#346699;
+	text-decoration:none;
+}
+
+.Calendar p a:hover,
+.FAQ p a:hover,
+.Aggregation p a:hover,/* filter */
+.FormEditor p a:hover,
+.SearchResults p a:hover,
+.SearchResultsCombined p a:hover,
+.SiteMap p a:hover,
+.TOCBlock p a:hover,
+.WhatsNew p a:hover {
+	color:#346699;
+	text-decoration:underline;
+}
+
+.Calendar p a:active,
+.FAQ p a:active,
+.Aggregation p a:active,/* filter */
+.FormEditor p a:active,
+.SearchResults p a:active,
+.SearchResultsCombined p a:active,
+.SiteMap p a:active,
+.TOCBlock p a:active,
+.WhatsNew p a:active  {
+	color:#346699;
+	text-decoration:none;
+}
+/* ================ NOTE ===============
+ - when you want to add a block to the left or right zone
+ - make that in Titan Admin of the wkst has class names for the block set up, for this css, the class names are leftContent and rightContent
+ - when you are in the Web Content Management area - editing area for blocks - and selecting your block Zone, make sure to also select the coorect block style
+ - if putting a block in the center zone no block style is needed,
+ - if putting a block in the right block zone, also select the rightContent block style, so that under Selected: the block is listed first and the block style is listed second
+ - if putting a block in the left block zone, also select the leftContent block style, so that under Selected: the block is listed first and the block style is listed second
+ - this css was set up to have left and right zone css style for:
+   .Aggregation .OneCol
+	 .TOCBlock .OneCol
+	 .WhatsNew .OneCol
+   ===================================== */
+	 
+	 
+/* ==== Calendar ====
+===================== */ 
+/* table and filters */ 
+.Calendar .calendarCallOut {
+	margin:0px;
+}	
+
+#rightZone .Calendar .calendarCallOut {
+	margin:0px 0px 0px 15px;
+}	
+
+#leftZone .Calendar .calendarCallOut {
+	margin:0px 0px 0px 8px;
+}	
+
+.Calendar .calendarCallOut table{
+	border-collapse:collapse;
+}	
+
+.Calendar .calendarCallOut table th{
+	color:#555;
+}
+
+.Calendar .calendarCallOut table .arrow {
+	cursor:pointer;
+	color:#1A3481;
+	padding-bottom:5px;
+}
+
+.Calendar .calendarCallOut table .arrow:hover {
+	color:#677BAE;
+}
+
+.Calendar .calendarCallOut table td{
+	background-color:#ddd;
+	border:1px solid #999;
+	color:#333;
+	cursor:pointer;	
+	height:18px;
+	text-align:center;
+	width:21px;
+}	
+
+.Calendar .calendarCallOut table .otherMonth {
+	background-color:#ccc;
+	color:#666;
+	cursor:text;
+}
+
+.Calendar .calendarCallOut table .selected {
+	background-color:#eee;
+	color:#1A3481;
+	font-weight:bold;
+}
+
+.Calendar .calendarCallOut .calendarNav {
+	text-align:left;
+	margin:5px 0px 5px 25px;
+}
+
+.Calendar .calendarCallOut .calendarNav span{
+	font-weight:bold;
+	color:#555;
+	cursor:pointer;
+}
+
+.Calendar .calendarCallOut .calendarNav .selected{
+	color:#1A3481;
+}
+
+.Calendar .calendarCallOut .calendarNav span:hover{
+	color:#1A3481;
+}
+
+.Calendar .calendarCallOut .CalendarFilter {
+
+}
+
+.Calendar .calendarCallOut .CalendarFilter fieldset{
+	width:190px;
+}
+
+.Calendar .calendarCallOut .CalendarFilter fieldset h4{
+	text-transform:capitalize;
+}
+
+.Calendar .calendarCallOut .CalendarFilter fieldset span{
+	display:block;
+	margin:2px 0px;
+}
+
+.Calendar .calendarCallOut .CalendarFilter fieldset span label{
+	margin:0px 0px 0px 5px;
+}
+
+.Firefox .Calendar .calendarCallOut .CalendarFilter fieldset span label{
+	vertical-align:middle; /* to have the text aligned better with the input */
+}
+
+.Firefox .Calendar .calendarCallOut .CalendarFilter fieldset input{
+	vertical-align:middle; /* to have the text aligned better with the input */
+}
+
+/* ==== listing complete results for time frame ==== */
+.Calendar .CalendarResults .loading {
+	display:none;
+}
+
+.Calendar .CalendarResults {
+	width:470px; /*  for wkst, same as #centerZone for use in the center zone */
+}
+
+.Calendar .CalendarResults .data ul.pagination {
+	border-bottom:1px solid #A5B2D2;
+	margin:0px 0px 10px 0px;
+	padding:2px 0px;
+	text-align:right;
+}
+
+.Calendar .CalendarResults .data ul.pagination li {
+	display:inline;
+}
+
+.Calendar .CalendarResults .data ul.pagination li a:hover{
+	text-decoration:none;
+}
+
+.Calendar .CalendarResults .data h3{	
+	border-bottom:2px solid #A5B2D2;
+	font-size:12px;	
+	margin:0px;
+}
+
+.Calendar .CalendarResults .data .OneCol div{
+	border-bottom:1px solid #A5B2D2;
+	padding:5px 0px;
+	overflow:hidden;
+	width:;
+}
+
+.Calendar .CalendarResults .data .OneCol div h4{
+	margin:0px 0px 5px 0px;
+	text-transform:capitalize;
+}
+
+.Calendar .CalendarResults .data .OneCol div span label {
+	font-weight:bold;
+	float:left;
+	width:60px;	
+}
+
+.Calendar .CalendarResults .data .OneCol div span.startDate{
+	display:block;
+}
+
+.Calendar .CalendarResults .data .OneCol div span.location{
+	display:block; 
+}
+
+.Calendar .CalendarResults .data .OneCol .image img{
+	float:left;
+	width:60px;
+	height:60px;
+	margin:0px 10px 0px 0px;
+}
+
+.Calendar .CalendarResults .data .OneCol div p{
+	clear:both;
+	margin:0px;
+	padding:2px 0px;	
+}
+
+.Calendar .CalendarResults .data .OneCol h2 {/* for group by date */
+	color:#1A3481;
+	font-size:12px;
+	text-align:right;
+	padding:5px 0px 2px 0px;
+	margin:0px;
+	border-bottom:1px solid #1A3481;
+}
+
+/* default layout - individual event info */
+.Calendar .CalendarResults .calendarItem h3{
+	font-size:12px;
+	border-bottom:2px solid #A5B2D2;
+	padding:0px 0px 2px 0px;
+	margin:0px 0px 5px 0px;
+}
+
+.Calendar .CalendarResults .calendarItem .calendarItemCallout div {
+	clear:both;
+	margin:1px 0px;
+}
+
+.Calendar .CalendarResults .calendarItem .calendarItemCallout div label{
+	float:left;
+	width:80px;
+	font-weight:bold;
+}
+
+/* full event layout - individual event info */
+.Calendar .CalendarResults .calendarItem h4{
+	font-size:12px;
+	border-bottom:2px solid #A5B2D2;
+	padding:0px 0px 5px 0px;
+	margin:0px 0px 5px 0px;
+}
+
+.Calendar .CalendarResults .calendarItem span{
+	clear:both;	
+	display:block;
+}
+
+.Calendar .CalendarResults .calendarItem span.startTime{
+	float:left;
+}
+
+.Calendar .CalendarResults .calendarItem span.endTime{
+	clear:none;
+	float:left;	
+}
+
+.Calendar .CalendarResults .calendarItem span.allDayEvent{
+	clear:none;	
+	float:left;
+	margin:0px 0px 0px 10px;
+}
+
+.Calendar .CalendarResults .calendarItem span label{
+	float:left;	
+	font-weight:bold;
+	width:80px;
+}
+
+.Calendar .CalendarResults .calendarItem div.attachment{
+	margin:10px 0px 5px 0px;
+}
+
+.Calendar .CalendarResults .calendarItem div.Description{
+	clear:both;	
+	margin:10px 0px 10px 0px;
+}
+
+.Calendar .CalendarResults .calendarItem div.Description p{
+	margin:0px;
+	padding:2px 0px;
+}	
+
+/* class="waiting" is set when data is being requested */
+.Calendar .CalendarResults.waiting .loading {
+    display:block ;
+}
+
+.Calendar .CalendarResults.waiting .data {
+    display:none ;
+}
+
+.Calendar .classifications { /* See description at .Aggregation */
+    display:none ;
+}
+
+
+/* for inline results - many listings area
+.Calendar.inline .CalendarResults .data .OneCol div h4{
+	float:left;
+	width:100px;
+}
+
+.Calendar.inline .CalendarResults .data .OneCol div span{
+	float:left;
+}
+.Calendar.inline .CalendarResults .data .OneCol div span label{
+	display:none;
+}
+.Calendar.inline  .CalendarResults .data .OneCol div span.date{
+	width:90px;
+}
+.Calendar.inline  .CalendarResults .data .OneCol div span.allDayEvent{
+	width:80px;
+	text-align:center;
+}
+
+.Calendar.inline  .CalendarResults .data .OneCol div span.location{
+	float:right;
+	width:160px;
+}*/
+
+/* ==== Filter - Filter and pagination ====
+=========================================== */  
+.Aggregation .paginationFooter {
+	clear:both;
+	list-style:none;
+	margin:0px;
+	padding:5px 0px;
+}
+
+.Aggregation .paginationFooter li{
+	display:inline;	
+	padding:0px 3px;	
+}
+
+.Aggregation .paginationFooter li a{
+	font-weight:bold;
+}
+
+.Aggregation .paginationFooter li a:hover{
+	font-weight:bold;
+}
+
+.Aggregation .AggregationFilter{padding:0 0 10px 0;}
+
+.Aggregation .AggregationFilter fieldset{	
+	padding:0px 0px 10px 0px;
+}
+
+.rightZone .Aggregation .AggregationFilter fieldset{	
+	background-color:#FAFBF3;
+}
+
+
+.Aggregation .AggregationFilter fieldset h4{
+	text-transform:capitalize;
+}
+
+.Aggregation .AggregationFilter fieldset span{
+	display:block;
+	margin:2px 0px;
+}
+
+.Aggregation .AggregationFilter fieldset span label{
+	margin:0px 0px 0px 5px;
+}
+
+.Firefox .Aggregation .AggregationFilter fieldset span label{
+	vertical-align:middle; /* to have the text aligned better with the input */
+}
+
+.Firefox .Aggregation .AggregationFilter fieldset input{
+	vertical-align:middle; /* to have the text aligned better with the input */
+}
+
+/* ==== Filter One Column ====
+============================== */  
+.Aggregation .AggregationResults .OneCol {
+	width:680px;   /*for wkst, same as #centerZone for use in the center zone */
+}
+
+.Aggregation .AggregationResults .OneCol div {
+	clear:both;
+	float:left;
+	padding:5px 0px 5px 0px;
+	/* you may want to put a height on this */
+}
+
+.Firefox .Aggregation .AggregationResults .OneCol div {
+	clear:both;
+	float:none;
+	padding:5px 0px 5px 0px;
+	/* you may want to put a height on this */
+}
+
+#rightZone .Aggregation .AggregationResults .OneCol div {
+	clear:both;
+	float:left;
+	width:100%;
+	padding:5px 0px 5px 0px;
+	/* you may want to put a height on this */
+}
+
+#rightZone .Aggregation .AggregationResults .OneCol .image a img {
+	float:left;
+	width:15px;
+	height:15px;
+	margin:0px 10px 0px 0px;
+	}
+
+.Aggregation .AggregationResults .OneCol div.altRow {	
+
+}
+
+.Aggregation .AggregationResults .OneCol p{
+	margin:0px; 
+	padding:2px 0px;
+}
+
+.Aggregation .AggregationResults .OneCol .image a img {
+	float:left;
+	margin:0px 10px 0px 0px;
+}
+
+/* for use in right zone*/
+
+.Aggregation.rightContent .AggregationResults .OneCol {
+	/*width:190px; for wkst only - this is not required - if used make sure to check the home page and 2 column page layout csses to see if their widths are similar, or add new style for those layouts */
+}
+
+.Aggregation.rightContent .AggregationResults .OneCol div {
+	border:0;
+	padding:3px 0px;
+}
+
+.Aggregation.rightContent .AggregationResults .OneCol div {
+	background-color:transparent;
+}
+
+.Aggregation.rightContent .AggregationResults .OneCol .image a img {
+	float:none;
+	padding:3px 0px;
+}
+
+/* ==== Filter Two Column ====
+============================== */ 
+.Aggregation .TwoCol {
+	overflow:hidden;	
+	width:680px; /*  overflow needs width - for wkst same as #centerZone for use in the center zone */
+}
+.Aggregation .TwoCol {
+ 
+}
+.Aggregation .TwoCol div{
+	float:left;
+	padding:5px 4px 5px 4px;
+	width:47%;		
+	/* you might want to put a height on this */
+}
+
+.Aggregation .TwoCol div.altRow{
+	
+}
+
+.Aggregation .TwoCol div + div{
+	float:right;
+}
+
+.IE6 .Aggregation .TwoCol div.altRow{
+	float:left;
+	margin-right:20px;	
+	width:44%;		
+}
+
+.Aggregation .TwoCol p{
+	margin:0px;
+	padding:2px 0px;
+}
+
+.Aggregation .TwoCol .image a img {
+	float:left;
+	height:71px;
+	margin:0px 10px 0px 0px;
+	width:71px;	
+}
+
+/* ==== Filter Alpha List ====
+============================== */ 
+.Aggregation .alphaList {
+	list-style:none;
+	margin:0px 0px 10px 0px;
+	padding:0px;
+}
+
+.Aggregation .alphaList li{
+	display:inline;
+	margin:0px 10px 0px 0px
+}
+
+.Aggregation .alphaList li a:link{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.Aggregation .alphaList li a:visited{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.Aggregation .alphaList li a:hover{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.Aggregation .alphaList li a:active{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.Aggregation .alpha .tocList{
+	margin:0px 0px 10px 20px;
+}
+
+.Aggregation .alpha div{
+	margin:0px 0px 10px 0px;	
+}
+
+.Aggregation .alpha div img{
+	float:left;
+	height:60px;
+	margin:0px 10px 0px 0px;
+	width:60px;
+}
+
+.Aggregation .alpha  p {
+	margin:0px;
+	padding:2px 0px;	
+}
+
+/* class="waiting" is set when data is being requested */
+.Aggregation .AggregationResults .loading {
+    display:none ;
+}
+
+.Aggregation .AggregationResults.waiting .loading {
+    display:block ;
+}
+
+.Aggregation .AggregationResults.waiting .data {
+    display:none ;
+}
+
+/* display of tags used by each document */
+/*
+    Note: [selected] appears if the item is checked in the filter area
+    <div class="classifications">
+        <div class="oneClass [selected]">
+            <span>classification Name</span>
+            <ul>
+                <li class="[selected]">
+                    Attrib Name
+                </li>
+        </div>
+        ...repeat for each classification ...
+    </div>
+ */
+.Aggregation .AggregationResults .classifications
+
+{
+    display:none; 
+}
+/* ==== TOC Block - One Column ====
+=================================== */	
+.TOCBlock .OneCol {
+	width:100%; /*  for wkst, same as #centerZone for use in the center zone */
+}
+
+.TOCBlock .OneCol div {
+clear:both;
+
+padding:20px 0 10px 0;
+}
+
+
+
+.TOCBlock .OneCol div p{
+
+	margin:0px;
+	padding:2px 0px;
+}
+
+.TOCBlock .OneCol .image a img{
+
+	float:left;
+	height:71px;
+	margin:0px 10px 10px 0px;
+	width:71px;	
+
+}
+
+/* for use in right zone */
+
+#rightZone .TOCBlock{background-color:#f8f9fb;border: 1px solid #dbded5;}
+
+#rightZone .TOCBlock .OneCol {
+	width:100%; /*  for wkst, same as #centerZone for use in the center zone */
+}
+
+#rightZone .TOCBlock .OneCol div {
+clear:both;
+
+padding:20px 0 10px 0;
+}
+
+
+
+#rightZone .TOCBlock .OneCol div p{
+
+	margin:0px;
+	padding:2px 0px;
+}
+
+#rightZone .TOCBlock .OneCol .image a img{
+
+	float:left;
+	height:71px;
+	margin:0px 10px 10px 0px;
+	width:71px;	
+
+}
+
+/* ==== TOC Block - Two Column ====
+=================================== */	
+.TOCBlock .TwoCol {
+	overflow:hidden;
+	width:680px; /* need width if using overflow - for wkst same as #centerZone for use in the center zone */
+}
+
+.TOCBlock .TwoCol {	
+	margin-bottom:5px;
+}
+
+.TOCBlock .TwoCol div{
+	float:left;
+	padding:9px 4px 5px 4px;
+	width:47%;		
+	/* you might want to put a height on this */
+}
+
+.TOCBlock .TwoCol div.altRow{
+	
+}
+
+.TOCBlock .TwoCol div + div{
+	float:right;
+}
+
+.IE6 .TOCBlock .TwoCol div.altRow{
+	float:left;
+	margin-right:20px;
+	width:44%;		
+}
+
+.TOCBlock .TwoCol .altRow p{
+	margin:0px;
+	padding:2px 0px;
+}
+
+.TOCBlock .TwoCol .image a img{
+	float:left;
+	height:71px;
+	margin:0px 10px 0px 0px;
+	width:71px;	
+}
+
+
+/* ==== FAQ ====
+================ */	
+.FAQ ul {
+	list-style:none;
+	list-style-type:disc;
+	margin:0px 0px 30px 0px;
+	padding:0px;
+}	
+
+.FAQ ul li a p{
+	margin:0px;
+	padding:2px 0px;	
+}	
+
+.FAQ dl dt {
+	font-weight:bold;
+}	
+
+.FAQ dl dd {
+	margin:10px 0px 15px 0px;
+	padding:0px;
+}	
+
+.FAQ.callout {
+	padding:5px;
+}
+
+.FAQ.callout dl dd {
+	border-bottom:0;
+	margin:10px 0px 5px 0px;
+	padding:0px;
+}	
+
+/* ==== file upload  ====
+========================= */	
+.DisplaySideUpload fieldset {
+	width:263px;	padding:5px;
+}
+
+.IE .DisplaySideUpload fieldset {
+	width:274px;
+}
+
+.IE6 .DisplaySideUpload fieldset {
+	width:277px;
+}
+
+.DisplaySideUpload .uploadInfo{
+	margin:0px 0px 5px 0px;
+}
+
+.DisplaySideUpload .uploadInfo.error {
+	background-color:#eee;
+	border:1px solid #aaa;
+	color:#900;
+}
+
+.DisplaySideUpload .uploadFields {
+	padding-right:5px;
+}
+.DisplaySideUpload .uploadFields div{
+	margin:5px 0px;
+}
+
+.DisplaySideUpload .uploadFields div label{
+	float:left;
+	width:70px;
+}
+
+.DisplaySideUpload .uploadFields div input,
+.DisplaySideUpload .uploadFields div textarea{
+	font-size:12px;
+}
+
+.DisplaySideUpload .uploadFields div.file input{
+	height:22px;
+}
+
+.DisplaySideUpload .uploadFields div.title input,
+.DisplaySideUpload .uploadFields div.description textarea{
+	width:183px;
+}
+
+.IE .DisplaySideUpload .uploadFields div.title input,
+.IE .DisplaySideUpload .uploadFields div.description textarea{
+	width:192px;
+}
+
+.DisplaySideUpload .uploadFields div.upload{
+	text-align:right;
+}
+
+.Firefox .DisplaySideUpload .uploadFields div.upload input{
+	padding:1px 4px;
+}
+
+/* ==== Search Results  ====
+============================ */	
+.SearchResults {	
+	width:680px;/*  for wkst, same as #centerZone for use in the center zone */
+}
+
+/* general title area */
+.SearchResults .titleTop{
+	display:none;
+}
+
+.SearchResults .titleArea h4{
+	margin:0px 0px 10px 0px;
+}
+/* general listings styles */
+.SearchResults .OneCol div{
+	padding:8px;
+	margin:0px;
+	overflow:hidden;
+	width:99%; /* need width if using overflow */
+}
+
+.SearchResults .OneCol .image a img{
+	float:left;
+	height:32px;
+	margin:0px 10px 0px 0px;
+	width:32px;
+}
+
+.SearchResults  .OneCol div  h4 {
+	margin:0px;
+}
+
+.SearchResults  .OneCol div  h4 a {
+	font-weight:bold;
+}
+
+.SearchResults  .OneCol span.date{
+	display:block;
+	padding:2px 0px 0px 0px;
+}
+
+.SearchResults  .OneCol div p{
+	margin:0px;
+	padding:2px 0px 0px 0px;
+}
+
+
+/* smart search styles */
+.SearchResults .smartSearchResults {
+	background-color:#F0F3FB;
+	margin-bottom:20px;
+}
+
+.SearchResults .smartSearchResults .OneCol{
+	border:1px solid #A5B2D2;
+}
+
+.SearchResults .smartSearchResults h3 {	
+	background-color:#fff;
+	margin:0px;
+	padding:0px 5px 0px 0px;
+	text-align:right;		
+}
+
+/* organic search styles */
+.SearchResults .organicSearchResults {
+}
+
+.SearchResults .organicSearchResults div.altRow {
+	
+}
+
+/* general pagination */
+.SearchResults .paginationFooter {
+	text-align:right;
+	clear:both;
+	list-style:none;
+	margin:0px;
+	padding:2px 0px;
+}
+
+.SearchResults  .paginationFooter li{
+	display:inline;	
+}
+
+.SearchResults .paginationFooter li a:link{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResults .paginationFooter li a:visited{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResults .paginationFooter li a:hover{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResults .paginationFooter li a:active{
+	font-weight:bold;
+	margin:0px 4px;
+}
+/* ==== Search Results Combined ====
+   smart search styles when smart search is nothing special
+   ============================ */	
+.SearchResultsCombined {	
+	width:680px;/*  for wkst, same as #centerZone for use in the center zone */
+}
+
+.SearchResultsCombined .titleArea h4{
+	margin:0px 0px 10px 0px;
+}
+/* general listings styles */
+.SearchResultsCombined .OneCol div{
+	padding:8px;
+	margin:0px;
+	overflow:hidden;
+	width:99%; /* need width if using overflow */
+}
+
+.SearchResultsCombined .OneCol .image a img{
+	float:left;
+	height:32px;
+	margin:0px 10px 0px 0px;
+	width:32px;
+}
+
+.SearchResultsCombined  .OneCol div  h4 {
+	margin:0px;
+}
+
+.SearchResultsCombined  .OneCol div  h4 a {
+	font-weight:bold;
+}
+
+.SearchResultsCombined  .OneCol span.date{
+	display:block;
+	padding:2px 0px 0px 0px;
+}
+
+.SearchResultsCombined  .OneCol div p{
+	margin:0px;
+	padding:2px 0px 0px 0px;
+}
+
+/* organic search styles */
+.SearchResultsCombined .organicSearchResults,
+.SearchResultsCombined .smartSearchResults {
+}
+
+.SearchResultsCombined .smartSearchResults div.altRow,
+.SearchResultsCombined .organicSearchResults div.altRow {
+	background-color:#eee;
+	border-bottom:1px solid  #A5B2D2;
+	border-top:1px solid  #A5B2D2;
+}
+
+/* general pagination */
+.SearchResultsCombined .paginationFooter {
+	text-align:right;
+	clear:both;
+	list-style:none;
+	margin:0px;
+	padding:2px 0px;
+}
+
+.SearchResultsCombined  .paginationFooter li{
+	display:inline;	
+}
+
+.SearchResultsCombined .paginationFooter li a:link{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResultsCombined .paginationFooter li a:visited{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResultsCombined .paginationFooter li a:hover{
+	font-weight:bold;
+	margin:0px 4px;
+}
+.SearchResultsCombined .paginationFooter li a:active{
+	font-weight:bold;
+	margin:0px 4px;
+}
+
+.SearchResultsCombined .titleMiddle,
+.SearchResultsCombined .footerTop,
+.SearchResultsCombined .smartSearchTitle
+{
+    display:none;
+}
+
+/* ==== Site Map  ==========
+============================ */	
+.SiteMap ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+
+.SiteMap ul li{
+	margin: 0px 0px 5px 0px;
+}
+
+.SiteMap ul li a:link{
+	font-weight:bold;
+}
+
+.SiteMap ul li a:visited{
+	font-weight:bold;
+}
+
+.SiteMap ul li a:hover{
+	font-weight:bold;
+}
+
+.SiteMap ul li a:active{
+	font-weight:bold;
+}
+
+.SiteMap li ul{
+	margin:5px 0px 5px 20px;
+	list-style-type:circle;
+	padding:0px;
+}
+
+.SiteMap li ul li a:link {
+	font-weight:normal;
+}
+
+.SiteMap li ul li a:visited {
+	font-weight:normal;
+}
+
+.SiteMap li ul li a:hover{
+	font-weight:normal;
+}
+
+.SiteMap li ul li a:active {
+	font-weight:normal;
+}
+
+.SiteMap li ul li ul{
+	margin:5px 0px 5px 20px;
+	list-style-type:none;
+	padding:0px;
+}
+
+.SiteMap li ul li ul a:link {
+	color:#b4b4b4;
+	font-weight:normal;
+}
+
+.SiteMap li ul li ul a:visited {
+	color:#b4b4b4;
+	font-weight:normal;
+}
+
+.SiteMap li ul li ul a:hover{
+	color:#b4b4b4;
+	font-weight:normal;
+}
+
+.SiteMap li ul li ul a:active {
+	color:#b4b4b4;
+	font-weight:normal;
+}
+
+/* ==== What's new ====
+======================= */	
+.WhatsNew .OneCol {
+	width:100%; /*  for wkst same as #centerZone for use in the center zone */
+}
+
+.WhatsNew .OneCol div{
+	clear:both;
+	float:left;
+	padding:20px 0px 10px 0px;;		
+	/* you might want to put a height on this */
+}
+
+.WhatsNew .OneCol div.altRow{
+
+}
+
+.WhatsNew .OneCol div p{
+	margin:0px;
+	padding:2px 0px;
+}
+
+.WhatsNew .OneCol .image a img{
+	float:left;
+	height:71px;
+	margin:0px 10px 10px 0px;
+	width:71px;	
+}
+
+/* for use in right zone*/
+.WhatsNew.rightContent .OneCol {
+	width:190px; /*  for wkst same as #rightZone for use in the right zone */
+}
+
+.WhatsNew.rightContent .OneCol div {
+	border:0;
+	padding:3px 0px;
+}
+
+.WhatsNew.rightContent .OneCol div.altRow {
+	background-color:transparent;
+}
+
+.WhatsNew.rightContent .OneCol .image a img {
+	float:none;
+	padding:3px 0px;
+}
+/* for use in left zone*/
+.WhatsNew.leftContent .OneCol {
+	width:190px; /* for wkst same as #leftZone for use in the left zone */
+}
+
+.WhatsNew.leftContent .OneCol div {
+	border:0;
+	padding:3px 0px;
+}
+
+.WhatsNew.leftContent .OneCol div {
+	background-color:transparent;
+}
+
+.WhatsNew.leftContent .OneCol .image a img {
+	float:none;
+	padding:3px 0px;
+}
+
+/* ==== Form Editor ====
+======================== */	
+.FormEditor .ErrorMessage {
+	background-color:#eee;
+	border:1px solid #aaa;
+	color:#900;
+	padding:5px;
+}
+
+#rightZone .FormEditor{background-color:#f8f9fb;border: 1px solid #dbded5; clear:both;
+padding:10px 10px 10px 10px;}
+
+.FormEditor  .ErrorMessage .SFMessage:before {
+	content: "-";
+}
+
+.Aggregation .AggregationResults .classifications,
+.Calendar .CalendarResults .classifications
+{
+    display:none; 
+}    
+    
+.Aggregation .AggregationResults .loading {
+    display:none ;
+}
+.Aggregation .AggregationResults.waiting .loading {
+    display:block ;
+}
+.Aggregation .AggregationResults.waiting .data {
+    display:none ;
+}   
+
+/*==========flash div===========*/
+
+#flashContentHome{
+padding:0;
+margin:0;
+width:758px;
+height:116px;
+z-index:0;
+}
+
+#flashContentHome object{z-index:-1;}
+
+.pdfLink{
+
+}
+
+
+/*=======================FROM V3 site styles=====================*/
+
+.insideBG
+{
+    BACKGROUND: url(../display/images/bg_inside.gif) repeat-x
+}
+STRONG
+{
+    FONT-WEIGHT: bold
+}
+.banner
+{
+    BACKGROUND: url(../display/images/bg_banner.gif) repeat-x
+}
+.bannerInner
+{
+    BACKGROUND: url(../display/images/bg_banner_inner.gif) repeat-x
+}
+.header
+{
+    BACKGROUND: url(../display/images/bg_header.jpg) #112b7c repeat-y
+}
+
+.ViewMode
+{
+    FONT-SIZE: 11px;
+    COLOR: #333;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.EditLink
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    COLOR: #fff;
+    FONT-STYLE: normal
+}
+A.EditLink:link
+{
+    FONT-SIZE: 11px;
+    COLOR: #ffffff;
+    TEXT-DECORATION: underline
+}
+A.EditLink:hover
+{
+    FONT-SIZE: 11px;
+    COLOR: #fff;
+    TEXT-DECORATION: none
+}
+A.EditLink:visited
+{
+    FONT-SIZE: 11px;
+    COLOR: #ffffff
+}
+A.EditLink:active
+{
+    FONT-SIZE: 11px;
+    COLOR: #ffffff
+}
+
+.NewsTitle
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 25px;
+    FONT-WEIGHT: bold;
+    BACKGROUND: url(../display/images/icon_LBHeadline.gif) no-repeat;
+    PADDING-BOTTOM: 0px;
+    TEXT-TRANSFORM: capitalize;
+    COLOR: #666;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.YelloNewsBlock
+{
+    BORDER-RIGHT: #dbded5 1px solid;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: #dbded5 1px solid;
+    PADDING-LEFT: 10px;
+    BACKGROUND: #fafbf3;
+    PADDING-BOTTOM: 5px;
+    MARGIN: 5px 0px 0px;
+    BORDER-LEFT: #dbded5 1px solid;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #dbded5 1px solid
+}
+.newsitem
+{
+    PADDING-RIGHT: 10px;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 10px;
+    LINE-HEIGHT: 16px;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #ccc 1px solid
+}
+.newsitemLast
+{
+    PADDING-RIGHT: 10px;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 10px;
+    LINE-HEIGHT: 16px;
+    PADDING-TOP: 5px;
+    BORDER-BOTTOM: #ccc 0px solid
+}
+IMG.NewsBlockImg
+{
+    BORDER-RIGHT: #ccc 1px solid;
+    PADDING-RIGHT: 2px;
+    BORDER-TOP: #ccc 1px solid;
+    PADDING-LEFT: 2px;
+    PADDING-BOTTOM: 2px;
+    MARGIN: 0px 10px 0px 0px;
+    BORDER-LEFT: #ccc 1px solid;
+    PADDING-TOP: 2px;
+    BORDER-BOTTOM: #ccc 1px solid;
+    BACKGROUND-COLOR: #fff
+}
+
+.tdContent
+{
+    BORDER-RIGHT: 0px;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: 0px;
+    PADDING-LEFT: 15px;
+    PADDING-BOTTOM: 5px;
+    BORDER-LEFT: 0px;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: 0px
+}
+
+.date
+{
+    FONT-SIZE: 11px;
+    COLOR: #999;
+    FONT-FAMILY: Arial,Geneva, Helvetica, sans-serif
+}
+.img_border
+{
+    BORDER-RIGHT: #ccc 1px solid;
+    PADDING-RIGHT: 4px;
+    BORDER-TOP: #ccc 1px solid;
+    PADDING-LEFT: 4px;
+    BACKGROUND: #ecefe4;
+    PADDING-BOTTOM: 4px;
+    MARGIN: 0px 0px 5px;
+    BORDER-LEFT: #ccc 1px solid;
+    PADDING-TOP: 4px;
+    BORDER-BOTTOM: #ccc 1px solid
+}
+.RedText
+{
+    COLOR: #d45222
+}
+.PDF
+{
+    PADDING-RIGHT: 17px;
+    BACKGROUND-POSITION: right 50%;
+    PADDING-LEFT: 0px;
+    BACKGROUND-IMAGE: url(../display/images/icon_pdf.gif);
+    PADDING-BOTTOM: 0px;
+    PADDING-TOP: 0px;
+    BACKGROUND-REPEAT: no-repeat
+}
+
+#CallOutBox
+{
+    BORDER-RIGHT: #dbded5 1px solid;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: #dbded5 1px solid;
+    PADDING-LEFT: 10px;
+    BACKGROUND: #fafbf3;
+    FLOAT: right;
+    PADDING-BOTTOM: 10px;
+    MARGIN: 25px 0px 0px;
+    BORDER-LEFT: #dbded5 1px solid;
+    WIDTH: 200px;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: #dbded5 1px solid
+}
+#CallOutBox P
+{
+    MARGIN: 0px
+}
+.HomeToc
+{
+    PADDING-RIGHT: 5px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 5px;
+    PADDING-TOP: 0px
+}
+.Link STRONG
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.Link STRONG A:link
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #666;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.Link STRONG A:hover
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #666;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: underline
+}
+.Link STRONG A:visited
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11px;
+    COLOR: #333;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.Link UL
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 3px 0px 0px;
+    PADDING-TOP: 0px;
+    LIST-STYLE-TYPE: none
+}
+.Link LI
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 0px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    PADDING-BOTTOM: 0px;
+    MARGIN: 0px;
+    PADDING-TOP: 3px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-ALIGN: left
+}
+.Link LI A:link
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 15px;
+    FONT-SIZE: 11px;
+    BACKGROUND: url(../display/images/widge.gif) no-repeat left 2px;
+    PADDING-BOTTOM: 0px;
+    COLOR: #666;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.Link LI A:visited
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 15px;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 11px;
+    BACKGROUND: url(../display/images/widge.gif) no-repeat left 2px;
+    PADDING-BOTTOM: 0px;
+    COLOR: #666;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.Link LI A:active
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 15px;
+    FONT-SIZE: 11px;
+    BACKGROUND: url(../display/images/widge.gif) no-repeat left 3px;
+    PADDING-BOTTOM: 0px;
+    COLOR: #666;
+    PADDING-TOP: 0px;
+    FONT-FAMILY: Arial, Helvetica, sans-serif;
+    TEXT-DECORATION: none
+}
+.Link LI A:hover
+{
+    PADDING-RIGHT: 0px;
+    PADDING-LEFT: 15px;
+    BACKGROUND: url(../display/images/widge.gif) no-repeat left 2px;
+    PADDING-BOTTOM: 0px;
+    COLOR: #666;
+    PADDING-TOP: 0px;
+    TEXT-DECORATION: underline
+}
+
+
+.Login
+{
+    BORDER-RIGHT: #999999 1px solid;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: #999999 1px solid;
+    PADDING-LEFT: 10px;
+    PADDING-BOTTOM: 10px;
+    BORDER-LEFT: #999999 1px solid;
+    PADDING-TOP: 10px;
+    BORDER-BOTTOM: #999999 1px solid
+}
+.loginInput
+{
+    BORDER-RIGHT: #7b7b7b 1px solid;
+    BORDER-TOP: #7b7b7b 1px solid;
+    FONT-SIZE: 12px;
+    BORDER-LEFT: #7b7b7b 1px solid;
+    COLOR: #000000;
+    BORDER-BOTTOM: #7b7b7b 1px solid;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.LoginTD
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.LoginTD A:link
+{
+}
+.LoginTD A:visited
+{
+}
+.LoginTD A:hover
+{
+}
+.LoginTD A:visited
+{
+}
+.LoginFooter
+{
+    FONT-SIZE: 11px;
+    COLOR: #717171;
+    FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.Loginwarning
+{
+    FONT-WEIGHT: bold;
+    COLOR: #d45222
+}
+
+/*================from Application.css v3=====================*/
+
+.AppInput {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333;
+	border:1px #999 solid;
+	z-index:-1;
+}
+
+.IE6 .AppInput {z-index:-1 !important} 
+
+.PageTools {
+  padding: 3px 5px 3px 5px;
+  background: #f5f5f5;
+  border-top:#cccccc 1px solid;
+  border-bottom:#cccccc 1px solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #000;
+}
+
+
+.PageTools a:link, .PageTools a:visited{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #666;
+  text-decoration: none;
+}
+
+.PageTools a:hover{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: normal;
+  color: #666;
+  text-decoration: underline;
+}
+
+
+.PageControl {
+	padding: 3px 3px 3px 5px;
+	background: #eef4f9;
+	border-top:#cccccc 1px solid;
+  	border-bottom:#cccccc 1px solid;
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 11px;
+  	font-weight: normal;
+  	color: #000;
+	vertical-align:  middle;
+}
+
+.PageControl a:link , .PageControl a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 11px;
+  	font-weight: bold;
+  	color: #1d7fc6;
+	text-decoration: none;
+}
+
+.PageControl a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 11px;
+  	font-weight: bold;
+  	color: #1d7fc6;
+	text-decoration: underline;
+}
+
+/*=====================View Panel Table============================================*/
+
+.ViewPanel{
+  border:#b8c6ce 1px solid;
+
+}
+
+.ViewPanelTitle {
+	padding: 5px;
+	background: #b8c6ce;
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 11px;
+ 	font-weight: bold;
+   color: #000;
+}
+
+/*copy from old styles.css*/
+SPAN.treetext {
+	FONT-WEIGHT: normal; FONT-SIZE: 8pt; COLOR: #1e398d; FONT-FAMILY: verdana, geneva
+}
+
+A.Tree {
+	FONT-SIZE: 9px; COLOR: black; FONT-FAMILY: verdana,geneva,arial; TEXT-DECORATION: none
+}
+A.Tree:visited {
+	FONT-SIZE: 9px; COLOR: black; FONT-FAMILY: verdana,geneva,arial; TEXT-DECORATION: none
+}
+A.Tree:active {
+	FONT-SIZE: 9px; COLOR: black; FONT-FAMILY: verdana,geneva,arial; TEXT-DECORATION: none
+}
+A.Tree:hover {
+	FONT-SIZE: 9px; COLOR: red; FONT-FAMILY: verdana,geneva,arial; TEXT-DECORATION: none
+}
+
+.Legend{
+  padding: 3px 5px 3px 5px;
+  background: #f5f5f5;
+  border:#cccccc 1px solid;
+}
+ 
+.Legend td{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: normal;
+  color: #000;
+  padding: 3px 5px 3px 5px;
+}
+ 
+.Legend td h1{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  color: #000;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+/*===================== BEGIN VIEW RECORD AND LAST UPDATED BAR============================================*/
+
+.ViewRecord{
+	background:#fafbf3;
+	border: 1px #dbded5 solid;
+}
+
+.ViewRecord td{
+	font-family: Arial, Helvetica, sans-serif;
+  	font-size: 11px;
+	color: #000;
+	padding: 0px 5px 3px 5px;
+}
+
+
+.message {
+	margin: 5px 0;
+	display: block;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #d45222;
+}
+
+.warning 
+{
+	color: #d45222;
+}
+/*===================== eForms DATA Table============================================*/
+
+.DataHeader1{
+	background:#768e9d;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	padding: 0px;
+	height: 25px;
+
+}
+
+/*===================== REPORT DATA Table============================================*/
+
+.DataHeader td, .DataHeader{
+	background:#768e9d;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	padding: 5px;
+}
+
+.DataHeader a:link, .DataHeader a:visited{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+.DataHeader a:hover{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: underline;
+}
+
+.SubHeader {
+	background:#efefef;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000;
+	padding: 5px;
+}
+
+
+.Data td{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 5px 6px;
+	color: #000;
+}
+
+.odd td{
+	background: #f7fafc;
+	border-top: 1px #e6e9eb solid;
+	border-bottom: 1px #e6e9eb solid;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 5px 6px;
+	color: #000;
+}
+
+.DataHighlighted td
+{
+	background: #FFCC99;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 5px 6px;
+	color: #000;
+}
+
+.oddHighlighted td{
+	background: #FFCC99;
+	border-top: 1px #e6e9eb solid;
+	border-bottom: 1px #e6e9eb solid;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	padding: 5px 6px;
+	color: #000;
+}
+
+a.AgentName {
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 11px !important;
+	font-weight: bold !important;
+	color: #1d7fc6 !important;
+	text-decoration: none !important;
+}
+
+a.AgentName:hover {
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 11px !important;
+	font-weight: bold !important;
+	color: #1d7fc6 !important;
+	text-decoration: underline !important;
+}
+
+
+a.AgentName:visited {
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 11px !important;
+	font-weight: bold !important;
+	color: #1d7fc6 !important;
+	text-decoration: none !important;
+}
+
+a.blacklink:link {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #000;
+            text-decoration: underline;
+}
+ 
+a.blacklink:hover {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #000;
+            text-decoration: none;
+}
+ 
+a.blacklink:visited {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #000;
+            text-decoration: underline;
+}
+ 
+a.blacklink:active {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #000;
+            text-decoration: none;
+}
+
+.subtext{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000;
+}
+
+.newMessage {
+  font-weight: bold;
+}
+
+.readMessage {
+	font-weight: normal;
+}
+
+.highlight  {
+	background-color: #f5fce9;
+}
+
+#processingMessage {
+            padding: 10px;
+            height: 60px;
+            width: 400px;
+            color:#990000;
+            border: 1px #ccc solid;
+            padding: 5px;
+            background: #f7f4e2;
+            vertical-align: middle;
+            font-family: Arial,Geneva, Helvetica, sans-serif; 
+            font-size: 11px; 
+            font-weight: bold;
+            text-decoration: none;
+}
+
+#processingMessage P{ margin: 10px 0 0 0}
+
+
+.selected  {
+	background-color:  Yellow;
+	color: Black;
+	text-decoration:none;
+
+}
+
+.SearchTable {
+	border:1px #999 solid;
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 11px; 
+	FONT-FAMILY: verdana;
+	COLOR: #000000; 
+}
+
+.SearchTableHeader {
+	border-bottom: #999 1px solid;
+	background-color: #6E7E97;
+	padding-left: 8px;
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 12px; 
+	FONT-FAMILY: verdana, geneva;
+	COLOR: #FFFFFF; 
+	height: 25px;
+}
+
+.SearchTD
+{
+	padding: 0px 10px 0px 15px;
+}
+
+.DocUnread 
+{
+	FONT-WEIGHT: bold; 
+	COLOR: black;
+}
+
+.DocRead 
+{
+	FONT-WEIGHT: normal; 
+	COLOR: grey; 
+}
+
+/*===================== DROP DOWN MENU TOP NAV============================================*/
+
+#topNavContainer #menu2{/*z-index:100 !important;*/}
+
+.topdropmenudiv{
+width:225px;
+float: left;
+border: 0;
+/*z-index:100 !important;*/
+color: #fff;
+}
+
+#topNavContainer ul .topdropmenudiv{
+position:absolute;
+
+top:0px;
+left:0px;
+background-color:#d6dae5;
+} 
+
+
+
+
+
+#topNavContainer ul li:hover .topdropmenudiv {visibility:hidden; top:0px; left:0px;}
+
+
+
+* html .topdropmenudiv {
+
+	width: 90px;
+
+}
+
+.topdropmenudiv{
+top:0px; left:0px;
+float: left;
+color: #000 !important;
+visibility: hidden;
+}
+
+.IE6 .topdropmenudiv{z-index:100 !important;}
+
+.topdropmenudiv ul {width: 200px !important;padding: 0 0 5px 0 !important;height: auto !important;}
+
+.topdropmenudiv ul li{float: left; clear: left;text-align: left !important; color:#000 !important; width: 215px !important; height: auto !important; padding: 2px 5px 2px 2px !important; }
+
+
+
+
+
+.topdropmenudiv ul li a,
+
+.topdropmenudiv ul li a:link,
+
+.topdropmenudiv ul li a:visited{
+border:0 !important;
+width: 200px !important;
+display: block !important;
+padding: 2px 5px 2px 10px !important;
+text-decoration: none !important;
+text-transform:none !important;
+font-weight: normal !important;
+color: #000 !important;
+text-align: left !important;
+height: auto !important;
+}
+
+
+
+* html .topdropmenudiv a{ 
+
+width: 100%;
+
+}
+
+
+
+.topdropmenudiv ul li a:hover{ 
+width: 200px !important;
+display: block !important;
+padding: 2px 5px 2px 10px !important;
+text-decoration: none !important;
+font-weight: normal !important;
+color: #346699 !important;
+text-align: left !important;
+background:none !important;
+
+}
+
+#pageTopArea_thin{
+    height:114px;
+	background:#fff url(images/pageTopAreaBG_thin.JPG) top left repeat-x; /* logo image is gif with this color as background, not transparent - so logo background and this background are not distinguishable */
+	position:relative;
+	margin:0 0 0 0;
+	 /* don't use this if also using position:relative */
+	padding:0px 0px 0px 0px;
+	/* position:relative; used if absolute positioning is used, dont' use with overflow - currently not used for this css */
+}
+
+#pageTopAreaGrey
+{
+	height:15px;
+    background:#fff url(images/pageTopAreagrey.JPG) top left repeat-x; /* logo image is gif with this color as background, not transparent - so logo background and this background are not distinguishable */
+	position:relative;
+	margin:0 0 1px 0;
+	 /* don't use this if also using position:relative */
+	padding:0px 0px 0px 0px;
+	/* position:relative; used if absolute positioning is used, dont' use with overflow - currently not used for this css */
+}
+
+/* created for L&C eForms selection page*/
+.PageTools1 {
+  padding: 3px 5px 3px 5px;
+  background: #eef4f9;    
+  border-top:#999 1px solid;
+  border-left:#999 1px solid;
+  border-right:#999 1px solid;
+  border-bottom:#999 1px solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  color: #346699;
+  height: 26px;
+   
+}
+
+
+

@@ -1,0 +1,305 @@
+/* HTML ELEMENT STYLE DEFINITIONS */
+/* <p> 
+P {font-family: verdana, geneva, arial; font-size: 8pt; font-weight: normal; color: #000000; text-decoration: none}
+*/
+/* <td> */
+td {font-family: verdana, geneva, arial; font-size: 8pt; font-weight: normal; color: #000000; text-decoration: none}
+
+/* <h1> */
+ h1{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size : 14px;
+	font-style : normal;
+	font-variant : normal;
+	font-weight : bold;
+	padding-top: 0 0 4px 6px;
+	margin: 0px;
+}
+
+/* <h2> */
+ h2{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size : 13px;
+	font-style : normal;
+	font-variant : normal;
+	font-weight : bold;
+	padding-top: 0 0 4px 6px;
+	margin: 0px;
+}
+
+/* <h3> */
+ h3{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size : 12px;
+	font-style : normal;
+	font-variant : normal;
+	font-weight : bold;
+	padding-top: 0 0 4px 6px;
+	margin: 0px;
+}
+
+/* <h4><h5><h6> */
+ h4, h5, h6{
+	font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
+	color: #000000;
+	font-size : 11px;
+	font-style : normal;
+	font-variant : normal;
+	font-weight : bold;
+	padding-top: 0 0 4px 6px;
+	margin: 0px;
+}
+
+/* <a> */
+a{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: underline;
+}
+	  a.:link {
+	color: #1E398D;
+	text-decoration: underline;
+}
+ 	  a:visited {color: #840093; text-decoration: underline; }
+	  a:hover {color: #AC0220; text-decoration: underline }
+	  a:active {color: #0000A0; text-decoration: none }
+
+
+/* CLASS STYLE DEFINITIONS */
+
+/* Title Bar Syle */
+.tdcontenttitlebar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 14px;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	background-color: #F4F4F4;
+	padding-top: 18px;
+	padding-right: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+	border: 1px solid #878787;
+	color: #1E398D;
+}
+
+/* General Content Style */
+.tdcontent {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 13px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	padding: 6px;
+	border-right: 1px solid #878787;
+	border-bottom: 1px solid #878787;
+	border-left: 1px solid #878787;
+}
+
+.content{
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.style1{
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+
+.contentbold {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+}
+.style2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+}
+
+.headline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #003366;
+	text-decoration: none;
+	text-align: left;
+}
+.style3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #003366;
+	text-decoration: none;
+	text-align: left;
+}
+
+.subhead {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #003366;
+	text-decoration: none;
+	text-align: left;
+}
+.style4 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: bold;
+	font-variant: normal;
+	color: #003366;
+	text-decoration: none;
+	text-align: left;
+}
+
+ul {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 16px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	list-style-position: outside;
+	list-style-type: square;
+	
+}
+
+.dataText{
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.dataBoldK{
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.dataBoldB{
+	color: #003366;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.dataTextRev{
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.dataBoldRev{
+	color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: bold;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.disclaimerBlk{
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+.disclaimerBlu{
+	color: #003366;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	line-height: 12px;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: none;
+	text-align: left;
+}
+
+#navi a 
+{
+	BORDER-TOP: 1px solid; 
+	BORDER-RIGHT: 1px solid; 
+	PADDING-RIGHT: 10px; 
+	DISPLAY: block; 
+	PADDING-LEFT: 5px; 
+	BACKGROUND: #ffffff; 
+	PADDING-BOTTOM: 3px; 
+	MARGIN: 0px; 
+	FONT: 11px Verdana,Arial,Helvetica,sans-serif; 
+	BORDER-LEFT: 1px solid; 
+	WIDTH: 100%; 
+	COLOR: #003366; 
+	PADDING-TOP: 2px; 
+	TEXT-DECORATION: none
+}
+
+#navi a:hover {
+	background: #e6e6e6;
+	text-decoration: underline; 
+	color: #000000;
+}
